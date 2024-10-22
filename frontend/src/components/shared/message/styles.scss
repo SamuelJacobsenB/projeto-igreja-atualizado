@@ -43,9 +43,10 @@
   }
 
   div {
-    width: 100%;
+    align-self: right;
     height: 4px;
     border-radius: 2px;
+    animation: timer 6s linear;
   }
 }
 
@@ -65,5 +66,14 @@
   100% {
     opacity: 0.5;
     transform: translateY(-100%);
+  }
+}
+
+@keyframes timer {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
   }
 }

@@ -1,12 +1,16 @@
+"use client";
+
 import React from "react";
+import { useMessage } from "@/contexts/message.context";
 import "./styles.scss";
 
-interface MessageProps {
-  message: string;
-  type: "success" | "error";
-}
+const Message: React.FC = () => {
+  const { message, type } = useMessage();
 
-const Message = ({ message, type }: MessageProps) => {
+  if (!message) {
+    return null;
+  }
+
   return (
     <div className={`message ${type}`}>
       <p>{message}</p>

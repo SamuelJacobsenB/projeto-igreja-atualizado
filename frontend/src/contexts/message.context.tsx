@@ -1,7 +1,21 @@
+"use client";
+
 import React, { useState, useCallback, createContext, useContext } from "react";
 import { Type } from "@/types/type";
 
-const MessageContext = createContext({});
+interface MessageContextProps {
+  message: string | null;
+  type: Type | null;
+  showMessage: (msg: string, type: Type) => void;
+}
+
+const defaultContext: MessageContextProps = {
+  message: null,
+  type: null,
+  showMessage: () => {},
+};
+
+const MessageContext = createContext<MessageContextProps>(defaultContext);
 
 export const MessageProvider = ({
   children,
@@ -14,6 +28,7 @@ export const MessageProvider = ({
   const showMessage = useCallback((msg: string, type: Type) => {
     setMessage(msg);
     setType(type);
+
     setTimeout(() => {
       setMessage(null), setType(null);
     }, 6000);
