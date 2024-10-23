@@ -1,8 +1,10 @@
 import React from "react";
+import "./styles.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  color: "primary" | "secondary";
+  onClick?: () => void;
+  color: "primary" | "confirm" | "cancel";
 }
 
 const Button: React.FC<ButtonProps> = ({

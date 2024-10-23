@@ -1,5 +1,8 @@
-import Img from "@/components/shared/img/img";
+"use client";
+
 import React from "react";
+import Img from "@/components/shared/img/img";
+import "./styles.scss";
 
 const FormImage = () => {
   return (

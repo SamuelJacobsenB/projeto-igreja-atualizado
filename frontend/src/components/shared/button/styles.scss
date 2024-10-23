@@ -1,0 +1,40 @@
+@import "../../../styles/variables.scss";
+
+.btn {
+  font-size: $p-size;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: $primary-dark-color;
+    }
+  }
+
+  &.confirm {
+    background-color: $light-green;
+    color: white;
+
+    &:hover {
+      background-color: $green;
+    }
+  }
+
+  &.cancel {
+    background-color: $light-red;
+    color: white;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}
