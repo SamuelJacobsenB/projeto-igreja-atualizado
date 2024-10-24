@@ -22,22 +22,40 @@ const UserLinks: React.FC = () => {
         <Menu setIsOpen={setIsOpen}>
           <ul style={{ display: isOpen ? "flex" : "none" }}>
             <li>
-              <Link href={"/"}>Principal</Link>
+              <Link href={"/"}>
+                <I.Home />
+                Principal
+              </Link>
             </li>
             <li>
-              <Link href={"/cultos"}>Cultos</Link>
+              <Link href={"/cultos"}>
+                <I.Book />
+                Cultos
+              </Link>
             </li>
             <li>
-              <Link href={"/avisos"}>Avisos</Link>
+              <Link href={"/avisos"}>
+                <I.Warning />
+                Avisos
+              </Link>
             </li>
             <li>
-              <Link href={"/ajude"}>Ajude</Link>
+              <Link href={"/ajude"}>
+                <I.Add />
+                Ajude
+              </Link>
             </li>
             <li>
-              <Link href={"/contato"}>Contato</Link>
+              <Link href={"/contato"}>
+                <I.Phone />
+                Contato
+              </Link>
             </li>
             <li>
-              <Link href={"/login"}>Login</Link>
+              <Link href={"/login"}>
+                <I.Person />
+                Login
+              </Link>
             </li>
           </ul>
         </Menu>
