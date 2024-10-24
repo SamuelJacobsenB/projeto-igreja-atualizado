@@ -1,5 +1,5 @@
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoMail, IoPerson, IoKey } from "react-icons/io5";
 
-const icons = { Menu: IoMenu };
+const I = { Menu: IoMenu, Mail: IoMail, Person: IoPerson, Key: IoKey };
 
-export default icons;
+export default I;

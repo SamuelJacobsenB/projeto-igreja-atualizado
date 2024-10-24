@@ -7,6 +7,7 @@
 
   label {
     font-size: $big-size;
+    cursor: pointer;
   }
 
   div.input_area {
@@ -14,6 +15,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    cursor: pointer;
 
     input {
       font-size: $p-size;

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import "./styles.scss";
 
 interface InputProps {
@@ -26,9 +28,17 @@ const Input: React.FC<InputProps> = ({
   onChange,
   icon,
 }: InputProps) => {
+  const input: any = useRef();
+
+  const focus = (): void => {
+    input.current.focus();
+  };
+
   return (
     <div className="input">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} onClick={focus}>
+        {label}
+      </label>
       <div className="input_area">
         <input
           type={type}
@@ -39,6 +49,7 @@ const Input: React.FC<InputProps> = ({
           minLength={minLength}
           maxLength={maxLength}
           required={required}
+          ref={input}
         />
         <div className="icon">{icon}</div>
       </div>

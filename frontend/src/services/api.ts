@@ -1,10 +1,8 @@
 import axios from "axios";
 
+//your api url
 const api = axios.create({
-  baseURL: process.env.API_URL,
-  headers: {
-    Authorization: localStorage.getItem("access_token"),
-  },
+  baseURL: "http://localhost:2024",
 });
 
 export default api;
