@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.menu_left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: $primary-dark-color;
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
+  animation: to_right 0.4s linear alternate;
+
+  div.close {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: $subtitle-size;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    cursor: pointer;
+  }
+}
+
+@keyframes to_right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
