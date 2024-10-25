@@ -42,6 +42,12 @@ const UserLinks: React.FC = () => {
           Login
         </Link>
       </li>
+      <li>
+        <Link href={"/cadastrar"}>
+          <I.Person />
+          Cadastro
+        </Link>
+      </li>
     </ul>
   );
 };

@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.back {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  a {
+    font-size: $subtitle-size;
+    color: $primary-color;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.4s;
+
+    &:hover {
+      margin-left: 6px;
+    }
+  }
+}

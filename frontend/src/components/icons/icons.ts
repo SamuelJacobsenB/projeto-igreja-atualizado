@@ -10,6 +10,7 @@ import {
   IoBook,
   IoAdd,
   IoSearch,
+  IoArrowBack,
 } from "react-icons/io5";
 
 const I = {
@@ -24,6 +25,7 @@ const I = {
   Book: IoBook,
   Add: IoAdd,
   Search: IoSearch,
+  ArrowBack: IoArrowBack,
 };
 
 export default I;
