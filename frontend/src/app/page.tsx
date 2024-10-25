@@ -1,12 +1,17 @@
-import React from "react";
-import Header from "@/components/layout/header/header";
-import { Nav } from "@/components/layout/nav/nav";
+"use client";
+
+import React, { useEffect } from "react";
+import UserDefaultLayout from "@/components/layout/userDefaultLayout";
+import { getBoletimSemanal } from "@/functions/getBoletimSemanal";
 
 const Home = () => {
+  useEffect(() => {
+    console.log(getBoletimSemanal());
+  }, []);
+
   return (
     <>
-      <Header />
-      <Nav.default_user />
+      <UserDefaultLayout />
     </>
   );
 };

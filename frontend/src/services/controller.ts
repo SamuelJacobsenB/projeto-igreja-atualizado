@@ -4,7 +4,7 @@ import { useMessage } from "@/contexts/message.context";
 export class Controller {
   private readonly showMessage = useMessage().showMessage;
 
-  async get(url: string, token?: string) {
+  async get(url: string, token?: string): Promise<any> {
     return await api
       .get(url, { headers: { Authorization: token } })
       .then((response) => {
@@ -15,7 +15,7 @@ export class Controller {
       });
   }
 
-  async post(url: string, data: any, token?: string) {
+  async post(url: string, data: any, token?: string): Promise<any> {
     return await api
       .post(url, data, { headers: { Authorization: token } })
       .then((response) => {
@@ -30,7 +30,7 @@ export class Controller {
       });
   }
 
-  async patch(url: string, data: any, token?: string) {
+  async patch(url: string, data: any, token?: string): Promise<any> {
     return await api
       .patch(url, data, { headers: { Authorization: token } })
       .then((response: any) => {
@@ -41,7 +41,7 @@ export class Controller {
       });
   }
 
-  async delete(url: string, token?: string) {
+  async delete(url: string, token?: string): Promise<any> {
     return await api
       .delete(url, { headers: { Authorization: token } })
       .then((response: any) => {
