@@ -11,6 +11,7 @@ import {
   IoAdd,
   IoSearch,
   IoArrowBack,
+  IoNewspaper,
 } from "react-icons/io5";
 
 const I = {
@@ -26,6 +27,7 @@ const I = {
   Add: IoAdd,
   Search: IoSearch,
   ArrowBack: IoArrowBack,
+  Paper: IoNewspaper,
 };
 
 export default I;

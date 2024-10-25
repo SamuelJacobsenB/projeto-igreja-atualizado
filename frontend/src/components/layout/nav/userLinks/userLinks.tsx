@@ -13,6 +13,12 @@ const UserLinks: React.FC = () => {
         </Link>
       </li>
       <li>
+        <Link href={"/boletins"}>
+          <I.Paper />
+          Boletins
+        </Link>
+      </li>
+      <li>
         <Link href={"/cultos"}>
           <I.Book />
           Cultos
