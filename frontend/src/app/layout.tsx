@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 
 import Message from "@/components/shared/message/Message";
-import { MessageProvider } from "./../contexts/message.context";
+import Providers from "@/contexts/provider";
 
 export const metadata: Metadata = {
   title: "PIBSGP",
@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <MessageProvider>
+        <Providers>
           {children}
           <Message />
-        </MessageProvider>
+        </Providers>
       </body>
     </html>
   );

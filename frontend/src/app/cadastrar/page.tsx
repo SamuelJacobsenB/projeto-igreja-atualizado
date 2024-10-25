@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FormPage } from "@/components/layout/formPage/formPage";
 import Input from "@/components/shared/input/input";
 import I from "@/components/icons/icons";
 import { Controller } from "../../services/controller";
-import "./styles.scss";
+import { useMessage } from "@/contexts/message.context";
 
 const Cadastrar: React.FC = () => {
+  const router = useRouter();
+  const { showMessage } = useMessage();
+
   const controller = new Controller();
 
   const [name, setName] = useState<string>("");
@@ -17,13 +21,23 @@ const Cadastrar: React.FC = () => {
   const handleRegister = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    const res: any = await controller.post(
-      "/user",
-      JSON.stringify({ name, email, password })
-    );
+    const response: any = await controller.post("/user", {
+      name,
+      email,
+      password,
+    });
 
-    if (res.success) {
-      alert("Cadastro realizado com sucesso!");
+    if (response) {
+      const res: any = await controller.post("/auth/login", {
+        email,
+        password,
+      });
+
+      if (res) {
+        localStorage.setItem("token", `Bearer ${res.access_token}`);
+        showMessage("Cadastro realizado com sucesso!", "success");
+        router.push("/");
+      }
     }
   };
 
@@ -33,7 +47,7 @@ const Cadastrar: React.FC = () => {
         <FormPage.formImage />
         <FormPage.formArea
           backUrl="/"
-          title="Faça seu login:"
+          title="Cadastre-se:"
           onSubmit={(evt) => handleRegister(evt)}
         >
           <Input

@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useCallback, createContext, useContext } from "react";
 import { Type } from "@/types/type";
 
@@ -9,13 +7,9 @@ interface MessageContextProps {
   showMessage: (msg: string, type: Type) => void;
 }
 
-const defaultContext: MessageContextProps = {
-  message: null,
-  type: null,
-  showMessage: () => {},
-};
-
-const MessageContext = createContext<MessageContextProps>(defaultContext);
+const MessageContext = createContext<MessageContextProps>(
+  {} as MessageContextProps
+);
 
 export const MessageProvider = ({
   children,

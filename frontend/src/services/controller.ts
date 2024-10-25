@@ -22,7 +22,11 @@ export class Controller {
         return response.data;
       })
       .catch((error) => {
-        this.showMessage(error.response.data.message, "error");
+        if (Array.isArray(error.response.data.message)) {
+          this.showMessage(error.response.data.message[1], "error");
+        } else {
+          this.showMessage(error.response.data.message, "error");
+        }
       });
   }
 
