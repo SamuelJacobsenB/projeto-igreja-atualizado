@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.profile_area {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+
+  .profile {
+    background-color: $primary-color;
+    font-size: $subtitle-size;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $primary-dark-color;
+  }
+}
