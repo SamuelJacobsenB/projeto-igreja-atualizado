@@ -7,10 +7,12 @@ import Input from "./../../components/shared/input/input";
 import I from "@/components/icons/icons";
 import { Controller } from "./../../services/controller";
 import { useMessage } from "@/contexts/message.context";
+import { useUser } from "@/contexts/user.context";
 
 const Login = () => {
   const router = useRouter();
   const { showMessage } = useMessage();
+  const { getUser } = useUser();
 
   const controller = new Controller();
 
@@ -24,6 +26,8 @@ const Login = () => {
     if (res) {
       localStorage.setItem("token", `Bearer ${res.access_token}`);
       showMessage("Login efetuado com sucesso!", "success");
+
+      await getUser();
       router.push("/");
     }
   };

@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
-import { decode, JwtPayload } from "jsonwebtoken";
+import { decode } from "jsonwebtoken";
 import api from "@/services/api";
 
 type Role = "USER" | "ADMIN";
@@ -8,6 +8,7 @@ interface UserContextProps {
   name: string | null;
   email: string | null;
   role: Role | null;
+  getUser: () => Promise<void>;
 }
 
 const UserContext = createContext<UserContextProps>({} as UserContextProps);
@@ -45,7 +46,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ name, email, role }}>
+    <UserContext.Provider value={{ name, email, role, getUser }}>
       {children}
     </UserContext.Provider>
   );

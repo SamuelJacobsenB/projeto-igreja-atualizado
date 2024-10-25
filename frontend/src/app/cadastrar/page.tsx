@@ -7,10 +7,12 @@ import Input from "@/components/shared/input/input";
 import I from "@/components/icons/icons";
 import { Controller } from "../../services/controller";
 import { useMessage } from "@/contexts/message.context";
+import { useUser } from "@/contexts/user.context";
 
 const Cadastrar: React.FC = () => {
   const router = useRouter();
   const { showMessage } = useMessage();
+  const { getUser } = useUser();
 
   const controller = new Controller();
 
@@ -36,6 +38,8 @@ const Cadastrar: React.FC = () => {
       if (res) {
         localStorage.setItem("token", `Bearer ${res.access_token}`);
         showMessage("Cadastro realizado com sucesso!", "success");
+
+        await getUser();
         router.push("/");
       }
     }
