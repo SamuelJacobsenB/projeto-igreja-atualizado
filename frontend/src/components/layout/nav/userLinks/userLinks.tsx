@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import I from "@/components/icons/icons";
 import "./styles.scss";
-import Menu from "../../menu/menu";
+import SideBar from "../../sidebar/sidebar";
 
 const UserLinks: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,8 +19,8 @@ const UserLinks: React.FC = () => {
         <I.Menu />
       </div>
       {isOpen && (
-        <Menu setIsOpen={setIsOpen}>
-          <ul style={{ display: isOpen ? "flex" : "none" }}>
+        <SideBar setIsOpen={setIsOpen}>
+          <ul>
             <li>
               <Link href={"/"}>
                 <I.Home />
@@ -58,7 +58,7 @@ const UserLinks: React.FC = () => {
               </Link>
             </li>
           </ul>
-        </Menu>
+        </SideBar>
       )}
     </>
   );

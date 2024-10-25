@@ -1,17 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import I from "@/components/icons/icons";
 import "./styles.scss";
 
-interface MenuProps {
+interface SideBarProps {
   children: React.ReactNode;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Menu: React.FC<MenuProps> = ({ children, setIsOpen }: MenuProps) => {
+const SideBar: React.FC<SideBarProps> = ({
+  children,
+  setIsOpen,
+}: SideBarProps) => {
   return (
-    <div className="menu_left">
+    <div className="side_bar">
       <div className="close" onClick={() => setIsOpen(false)}>
         <I.Close />
       </div>
@@ -20,4 +23,4 @@ const Menu: React.FC<MenuProps> = ({ children, setIsOpen }: MenuProps) => {
   );
 };
 
-export default Menu;
+export default SideBar;
