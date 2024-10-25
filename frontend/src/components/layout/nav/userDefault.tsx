@@ -4,7 +4,7 @@ import { Nav } from "./nav";
 const UserDefault: React.FC = () => {
   return (
     <Nav.root>
-      <Nav.user_links />
+      <Nav.user_menu />
     </Nav.root>
   );
 };

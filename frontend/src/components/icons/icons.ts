@@ -6,9 +6,10 @@ import {
   IoClose,
   IoWarning,
   IoHome,
-  IoPhonePortrait,
+  IoCall,
   IoBook,
   IoAdd,
+  IoSearch,
 } from "react-icons/io5";
 
 const I = {
@@ -19,9 +20,10 @@ const I = {
   Close: IoClose,
   Warning: IoWarning,
   Home: IoHome,
-  Phone: IoPhonePortrait,
+  Phone: IoCall,
   Book: IoBook,
   Add: IoAdd,
+  Search: IoSearch,
 };
 
 export default I;

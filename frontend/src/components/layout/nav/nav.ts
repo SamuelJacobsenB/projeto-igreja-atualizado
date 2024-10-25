@@ -1,9 +1,10 @@
 import Root from "./root/root";
+import UserMenu from "./userMenu/userMenu";
 import UserDefault from "./userDefault";
-import UserLinks from "./userLinks/userLinks";
 
 export const Nav = {
   root: Root,
-  user_links: UserLinks,
+  user_menu: UserMenu,
+
   default_user: UserDefault,
 };
