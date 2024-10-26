@@ -1,12 +1,11 @@
 @import "../styles/variables.scss";
 
 .home {
-  .boletim {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
+  div.boletim {
     h1 {
       font-size: $title-size;
       margin: 10px;

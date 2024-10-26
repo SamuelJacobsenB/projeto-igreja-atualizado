@@ -13,7 +13,7 @@ body {
 
 .page {
   width: 100%;
-  max-width: 800px;
-  height: 100%;
-  margin: 60px auto 60px auto;
+  max-width: 1200px;
+  min-height: calc(100vh - 270px);
+  margin: auto;
 }

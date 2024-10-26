@@ -7,6 +7,7 @@ import { getBoletimSemanal } from "@/functions/getBoletimSemanal";
 import Topic from "@/components/shared/topic/topic";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import "./styles.scss";
+import Container from "@/components/shared/container/container";
 
 const Home: React.FC = () => {
   const { boletins, loading, error } = useBoletins();
@@ -18,12 +19,11 @@ const Home: React.FC = () => {
   const boletimSemanal = getBoletimSemanal(boletins);
 
   return (
-    <>
-      <UserDefaultLayout />
+    <UserDefaultLayout>
       <div className="home page">
-        <Topic type="bottom">Boletim</Topic>
         {boletimSemanal ? (
-          <div className="boletim">
+          <Container className="boletim">
+            <Topic>Pastoral</Topic>
             <h1>{boletimSemanal.title}</h1>
             <hr />
             <div
@@ -31,12 +31,12 @@ const Home: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
             />
             <small>{boletimSemanal.author}</small>
-          </div>
+          </Container>
         ) : (
           <h2>Nenhum boletim cadastrado esta semana</h2>
         )}
       </div>
-    </>
+    </UserDefaultLayout>
   );
 };
 

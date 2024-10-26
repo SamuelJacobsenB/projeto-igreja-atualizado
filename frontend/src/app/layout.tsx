@@ -3,7 +3,6 @@ import "@/styles/globals.scss";
 
 import Message from "@/components/shared/message/Message";
 import Providers from "@/contexts/provider";
-import Profile from "@/components/layout/profile/profile";
 
 export const metadata: Metadata = {
   title: "PIBSGP",
@@ -22,7 +21,6 @@ export default function RootLayout({
           <div className="view">
             {children}
             <Message />
-            <Profile />
           </div>
         </Providers>
       </body>

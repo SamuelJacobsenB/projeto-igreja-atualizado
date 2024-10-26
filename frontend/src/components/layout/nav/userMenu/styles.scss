@@ -1,6 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .menu {
+  z-index: 1000;
   font-size: $subtitle-size;
   color: white;
   width: 30px;

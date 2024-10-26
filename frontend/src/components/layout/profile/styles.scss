@@ -2,11 +2,10 @@
 
 .profile_area {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  padding: 10px;
 
   .profile {
     display: flex;

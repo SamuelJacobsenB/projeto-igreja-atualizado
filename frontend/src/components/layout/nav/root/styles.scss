@@ -1,8 +1,6 @@
 @import "../../../../styles/variables.scss";
 
 nav {
-  position: fixed;
-  top: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,4 +9,9 @@ nav {
   width: 100%;
   min-height: 60px;
   padding: 10px;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
 }
