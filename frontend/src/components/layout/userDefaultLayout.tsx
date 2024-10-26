@@ -14,7 +14,7 @@ const UserDefaultLayout: React.FC<UserDefaultLayoutProps> = ({
   return (
     <>
       <Header />
-      <Profile />
+      {/* <Profile /> */}
       <Nav.default_user />
       {children}
       <Footer />

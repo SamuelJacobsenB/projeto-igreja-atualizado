@@ -17,10 +17,8 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div className="profile_area">
-      <div className="profile" onClick={handleClick}>
-        {name ? name.at(0)?.toUpperCase() : <I.Person />}
-      </div>
+    <div className="profile" onClick={handleClick}>
+      {name ? name.at(0)?.toUpperCase() : <I.Person />}
     </div>
   );
 };
