@@ -25,7 +25,11 @@ const Home: React.FC = () => {
         {boletimSemanal ? (
           <div className="boletim">
             <h1>{boletimSemanal.title}</h1>
-            <div className="content">{boletimSemanal.content}</div>
+            <hr />
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
+            />
             <small>{boletimSemanal.author}</small>
           </div>
         ) : (
