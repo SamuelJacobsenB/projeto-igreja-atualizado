@@ -24,7 +24,8 @@ export const MessageProvider = ({
     setType(type);
 
     setTimeout(() => {
-      setMessage(null), setType(null);
+      setMessage(null);
+      setType(null);
     }, 6000);
   }, []);
 

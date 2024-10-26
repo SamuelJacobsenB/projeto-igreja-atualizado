@@ -23,22 +23,29 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
     if (bearerToken) {
       const token: string = bearerToken.split(" ")[1];
-      const { id }: any = decode(token);
 
-      if (id && typeof id === "string") {
-        console.log(id);
-        await api
-          .get(`/user/${id}`, {
-            headers: { Authorization: bearerToken },
-          })
-          .then((res: any) => {
-            setName(res.data.name);
-            setEmail(res.data.email);
-            setRole(res.data.role);
-          })
-          .catch(() => {
-            localStorage.removeItem("token");
-          });
+      if (
+        token != undefined &&
+        token != null &&
+        token != "undefined" &&
+        token != "null"
+      ) {
+        const { id }: any = decode(token);
+
+        if (id && typeof id === "string") {
+          await api
+            .get(`/user/${id}`, {
+              headers: { Authorization: bearerToken },
+            })
+            .then((res: any) => {
+              setName(res.data.name);
+              setEmail(res.data.email);
+              setRole(res.data.role);
+            })
+            .catch(() => {
+              localStorage.removeItem("token");
+            });
+        }
       }
     }
   };

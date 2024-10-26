@@ -19,9 +19,11 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <Providers>
-          <div className="page">{children}</div>
-          <Message />
-          <Profile />
+          <div className="page">
+            {children}
+            <Message />
+            <Profile />
+          </div>
         </Providers>
       </body>
     </html>

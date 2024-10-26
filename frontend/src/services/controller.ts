@@ -1,9 +1,6 @@
 import api from "./api";
-import { useMessage } from "@/contexts/message.context";
 
 export class Controller {
-  private readonly showMessage = useMessage().showMessage;
-
   async get(url: string, token?: string): Promise<any> {
     return await api
       .get(url, { headers: { Authorization: token } })
@@ -11,7 +8,7 @@ export class Controller {
         return response.data;
       })
       .catch((error) => {
-        this.showMessage(error.response.data.message, "error");
+        return { error: error.response.data.message };
       });
   }
 
@@ -23,9 +20,9 @@ export class Controller {
       })
       .catch((error) => {
         if (Array.isArray(error.response.data.message)) {
-          this.showMessage(error.response.data.message[1], "error");
+          return { error: error.response.data.message[1] };
         } else {
-          this.showMessage(error.response.data.message, "error");
+          return { error: error.response.data.message };
         }
       });
   }
@@ -34,10 +31,10 @@ export class Controller {
     return await api
       .patch(url, data, { headers: { Authorization: token } })
       .then((response: any) => {
-        this.showMessage(response.data, "success");
+        return response.data;
       })
       .catch((error) => {
-        this.showMessage(error.response.data.message, "error");
+        return { error: error.response.data.message };
       });
   }
 
@@ -45,10 +42,10 @@ export class Controller {
     return await api
       .delete(url, { headers: { Authorization: token } })
       .then((response: any) => {
-        this.showMessage(response.data, "success");
+        return response.data;
       })
       .catch((error) => {
-        this.showMessage(error.response.data.message, "error");
+        return { error: error.response.data.message };
       });
   }
 }

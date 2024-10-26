@@ -30,18 +30,22 @@ const Cadastrar: React.FC = () => {
     });
 
     if (response) {
-      const res: any = await controller.post("/auth/login", {
-        email,
-        password,
-      });
+      await controller
+        .post("/auth/login", {
+          email,
+          password,
+        })
+        .then(async (res) => {
+          if (res.error) {
+            showMessage(res.error, "error");
+          }
 
-      if (res) {
-        localStorage.setItem("token", `Bearer ${res.access_token}`);
-        showMessage("Cadastro realizado com sucesso!", "success");
+          localStorage.setItem("token", `Bearer ${res.access_token}`);
+          showMessage("Cadastro realizado com sucesso!", "success");
 
-        await getUser();
-        router.push("/");
-      }
+          await getUser();
+          router.push("/");
+        });
     }
   };
 
