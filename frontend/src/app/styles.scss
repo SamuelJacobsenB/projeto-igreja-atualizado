@@ -1,0 +1,9 @@
+@import "../styles/variables.scss";
+
+.home {
+  .boletim {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

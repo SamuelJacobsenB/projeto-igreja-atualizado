@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body>
         <Providers>
-          <div className="page">
+          <div className="view">
             {children}
             <Message />
             <Profile />
