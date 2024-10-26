@@ -7,6 +7,7 @@ import { Boletim } from "@/types/boletim.type";
 export function useBoletins() {
   const [boletins, setBoletins] = useState<Boletim[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const controller = new Controller();
@@ -15,6 +16,8 @@ export function useBoletins() {
       try {
         const res: Boletim[] = await controller.get("/boletim");
         setBoletins(res);
+      } catch (err) {
+        setError(err as Error);
       } finally {
         setLoading(false);
       }
@@ -23,5 +26,5 @@ export function useBoletins() {
     getBoletins();
   }, []);
 
-  return { boletins, loading };
+  return { boletins, loading, error };
 }

@@ -26,17 +26,19 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       const { id }: any = decode(token);
 
       if (id && typeof id === "string") {
-        const res: any = await api.get(`/user/${id}`, {
-          headers: { Authorization: bearerToken },
-        });
-
-        if (res) {
-          setName(res.data.name);
-          setEmail(res.data.email);
-          setRole(res.data.role);
-        } else {
-          localStorage.removeItem("token");
-        }
+        console.log(id);
+        await api
+          .get(`/user/${id}`, {
+            headers: { Authorization: bearerToken },
+          })
+          .then((res: any) => {
+            setName(res.data.name);
+            setEmail(res.data.email);
+            setRole(res.data.role);
+          })
+          .catch(() => {
+            localStorage.removeItem("token");
+          });
       }
     }
   };

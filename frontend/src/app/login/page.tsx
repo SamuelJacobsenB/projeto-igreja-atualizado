@@ -8,11 +8,17 @@ import I from "@/components/icons/icons";
 import { Controller } from "./../../services/controller";
 import { useMessage } from "@/contexts/message.context";
 import { useUser } from "@/contexts/user.context";
+import { useBoletins } from "@/hooks/useBoletins";
 
 const Login = () => {
   const router = useRouter();
   const { showMessage } = useMessage();
   const { getUser } = useUser();
+  const { boletins, loading } = useBoletins();
+
+  if (!loading) {
+    console.log(boletins);
+  }
 
   const controller = new Controller();
 
