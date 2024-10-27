@@ -1,0 +1,67 @@
+@import "../../../styles/variables.scss";
+
+section.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      color: white;
+      font-size: $title-size;
+      padding: 12px;
+      border-radius: 50%;
+      transition: 0.4s;
+
+      &.instagram {
+        &:hover {
+          background: linear-gradient(
+            45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d
+          );
+        }
+      }
+
+      &.facebook {
+        &:hover {
+          background-color: #3b5998;
+        }
+      }
+
+      &.youtube {
+        &:hover {
+          color: #ff0000;
+        }
+      }
+
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+
+  h1 {
+    font-size: $title-size;
+    font-weight: 100;
+    margin: 10px;
+  }
+}

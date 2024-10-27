@@ -8,6 +8,7 @@ import Topic from "@/components/shared/topic/topic";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import "./styles.scss";
 import Container from "@/components/shared/container/container";
+import Social from "@/components/layout/social/social";
 
 const Home: React.FC = () => {
   const { boletins, loading, error } = useBoletins();
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
           <h2>Nenhum boletim cadastrado esta semana</h2>
         )}
       </div>
+      <Social />
     </UserDefaultLayout>
   );
 };

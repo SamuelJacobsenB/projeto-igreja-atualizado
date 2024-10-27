@@ -12,7 +12,10 @@ import {
   IoSearch,
   IoArrowBack,
   IoNewspaper,
+  IoLogoInstagram,
+  IoLogoYoutube,
 } from "react-icons/io5";
+import { FaFacebookF } from "react-icons/fa";
 
 const I = {
   Menu: IoMenu,
@@ -28,6 +31,9 @@ const I = {
   Search: IoSearch,
   ArrowBack: IoArrowBack,
   Paper: IoNewspaper,
+  Facebook: FaFacebookF,
+  Instagram: IoLogoInstagram,
+  Youtube: IoLogoYoutube,
 };
 
 export default I;
