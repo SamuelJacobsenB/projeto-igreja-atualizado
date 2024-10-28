@@ -14,6 +14,8 @@ import {
   IoNewspaper,
   IoLogoInstagram,
   IoLogoYoutube,
+  IoLogIn,
+  IoLogOut,
 } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -34,6 +36,8 @@ const I = {
   Facebook: FaFacebookF,
   Instagram: IoLogoInstagram,
   Youtube: IoLogoYoutube,
+  Login: IoLogIn,
+  Logout: IoLogOut,
 };
 
 export default I;

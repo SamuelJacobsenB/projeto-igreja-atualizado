@@ -27,6 +27,18 @@ ul {
       background-color: $primary-color;
     }
 
+    &.logout {
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     a {
       display: flex;
       justify-content: center;

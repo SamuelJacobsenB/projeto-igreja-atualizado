@@ -2,6 +2,7 @@
 
 import React from "react";
 import { MessageProvider } from "./message.context";
+import { ModalProvider } from "./modal.context";
 import { UserProvider } from "./user.context";
 
 interface ProvidersProps {
@@ -11,7 +12,9 @@ interface ProvidersProps {
 const Providers: React.FC<ProvidersProps> = ({ children }: ProvidersProps) => {
   return (
     <UserProvider>
-      <MessageProvider>{children}</MessageProvider>
+      <MessageProvider>
+        <ModalProvider>{children}</ModalProvider>
+      </MessageProvider>
     </UserProvider>
   );
 };

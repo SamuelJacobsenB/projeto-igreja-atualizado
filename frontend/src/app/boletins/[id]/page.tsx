@@ -8,6 +8,7 @@ import LoadPage from "@/components/layout/loadPage/loadPage";
 import Container from "@/components/shared/container/container";
 import Topic from "@/components/shared/topic/topic";
 import "./styles.scss";
+import Social from "@/components/layout/social/social";
 
 const BoletimInfo: React.FC = () => {
   const { id }: { id: string } = useParams();
@@ -16,9 +17,6 @@ const BoletimInfo: React.FC = () => {
   if (loading) {
     return <LoadPage />;
   }
-
-  console.log(id);
-
   return (
     <UserDefaultLayout>
       <div className="boletim_info page">
@@ -39,6 +37,7 @@ const BoletimInfo: React.FC = () => {
             </div>
           </Container>
         )}
+        <Social />
       </div>
     </UserDefaultLayout>
   );

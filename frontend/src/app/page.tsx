@@ -36,8 +36,8 @@ const Home: React.FC = () => {
         ) : (
           <h2>Nenhum boletim cadastrado esta semana</h2>
         )}
+        <Social />
       </div>
-      <Social />
     </UserDefaultLayout>
   );
 };

@@ -2,7 +2,9 @@
 
 .boletim_info {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 
   div.boletim {
     max-width: 800px;

@@ -6,7 +6,8 @@
   justify-content: space-around;
   font-size: $subtitle-size;
   color: white;
-  width: 80%;
+  width: 100%;
+  max-width: 600px;
 
   .burguer {
     cursor: pointer;
