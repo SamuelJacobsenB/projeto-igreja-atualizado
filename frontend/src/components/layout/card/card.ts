@@ -1,5 +1,5 @@
 import Boletim from "./boletim/boletim";
 
-export const card = {
-  boletim: Boletim,
+export const Card = {
+  Boletim: Boletim,
 };

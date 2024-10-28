@@ -4,18 +4,18 @@ import { useState, useEffect } from "react";
 import { Controller } from "@/services/controller";
 import { Boletim } from "@/types/boletim.type";
 
-export function useBoletins() {
-  const [boletins, setBoletins] = useState<Boletim[]>([]);
+export function useOneBoletim(id: string) {
+  const [boletim, setBoletim] = useState<Boletim>({} as Boletim);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const controller = new Controller();
 
-    const getBoletim = async () => {
+    const getBoletins = async () => {
       try {
-        const res: Boletim[] = await controller.get("/boletim");
-        setBoletins(res);
+        const res: Boletim = await controller.get(`/boletim/${id}`);
+        setBoletim(res);
       } catch (err) {
         setError(err as Error);
       } finally {
@@ -23,8 +23,8 @@ export function useBoletins() {
       }
     };
 
-    getBoletim();
-  }, []);
+    getBoletins();
+  }, [id]);
 
-  return { boletins, loading, error };
+  return { boletim, loading, error };
 }

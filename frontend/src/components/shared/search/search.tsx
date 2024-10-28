@@ -18,11 +18,14 @@ const Search: React.FC<SearchProps> = ({
   const input: any = useRef();
 
   const resetInput = () => {
-    input.current.value = "";
     setItens(fixedItens);
   };
 
-  const handleSearch = (searchValue: string): void => {
+  const handleSearch = (evt: React.FormEvent<HTMLFormElement>): void => {
+    evt.preventDefault();
+
+    const searchValue: string = input.current.value;
+
     const filteredItens = fixedItens.filter((item) => {
       if (item.name) {
         return item.name.toLowerCase().includes(searchValue.toLowerCase());
@@ -36,23 +39,22 @@ const Search: React.FC<SearchProps> = ({
 
   return (
     <div className="search">
-      <input
-        type="text"
-        name="search"
-        onChange={(evt) => {
-          handleSearch(evt.target.value);
-        }}
-        placeholder={placeholder}
-        ref={input}
-      />
-      <div className="btn_area">
-        <button type="reset" onClick={resetInput}>
-          <I.Close />
-        </button>
-        <button type="submit">
-          <I.Search />
-        </button>
-      </div>
+      <form onSubmit={(evt) => handleSearch(evt)}>
+        <input
+          type="text"
+          name="search"
+          placeholder={placeholder}
+          ref={input}
+        />
+        <div className="btn_area">
+          <button type="reset" onClick={resetInput}>
+            <I.Close />
+          </button>
+          <button type="submit">
+            <I.Search />
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

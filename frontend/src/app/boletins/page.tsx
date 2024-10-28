@@ -1,14 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import UserDefaultLayout from "@/components/layout/userDefaultLayout";
 import Search from "@/components/shared/search/search";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import { useBoletins } from "@/hooks/useBoletins";
-import "./styles.scss";
 import { Boletim } from "@/types/boletim.type";
+import { Card } from "@/components/layout/card/card";
+import "./styles.scss";
 
 const Boletins: React.FC = () => {
+  const router = useRouter();
   const { boletins, loading, error } = useBoletins();
   const [boletimList, setBoletimList] = useState<Boletim[]>([]);
 
@@ -19,8 +22,6 @@ const Boletins: React.FC = () => {
   if (loading) {
     return <LoadPage />;
   }
-
-  console.log(boletimList, boletins);
 
   return (
     <UserDefaultLayout>
@@ -34,9 +35,12 @@ const Boletins: React.FC = () => {
         <div className="list">
           {boletimList &&
             boletimList.map((boletim) => (
-              <div key={boletim.id} className="boletim">
-                <h2>{boletim.title}</h2>
-              </div>
+              <Card.Boletim
+                key={boletim.id}
+                title={boletim.title}
+                created_at={boletim.created_at}
+                onClick={() => router.push(`/boletins/${boletim.id}`)}
+              />
             ))}
         </div>
       </div>

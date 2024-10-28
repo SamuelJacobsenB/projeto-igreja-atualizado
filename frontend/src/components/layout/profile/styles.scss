@@ -9,4 +9,22 @@
   padding: 8px;
   transition: 0.4s;
   cursor: pointer;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: $big-size;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: $p-size;
+    }
+  }
 }
