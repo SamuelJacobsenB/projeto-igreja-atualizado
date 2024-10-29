@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import "./styles.scss";
 import I from "@/components/icons/icons";
 import SideBar from "../../../sidebar/sidebar";
 import AdminLinks from "../../adminLinks/userLinks/adminLinks";
 import Profile from "../../../profile/profile";
+import "./styles.scss";
 
 const AdminMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

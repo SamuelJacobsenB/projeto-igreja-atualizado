@@ -2,19 +2,22 @@
 
 .home {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   flex-wrap: wrap;
+  padding: 10px;
+
+  h2 {
+    font-size: $subtitle-size;
+    margin: 10px;
+  }
 
   div.boletim {
     max-width: 800px;
 
     h1 {
       font-size: $title-size;
-      margin: 10px;
-    }
-
-    h2 {
-      font-size: $subtitle-size;
       margin: 10px;
     }
 
