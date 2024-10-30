@@ -8,5 +8,36 @@
 
   h1 {
     font-size: $title-size;
+    margin: 10px;
+  }
+
+  div.files {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    max-width: 900px;
+
+    h1 {
+      font-size: $subtitle-size;
+    }
+
+    .file_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+
+      .container_image {
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+        max-height: 300px;
+      }
+    }
   }
 }

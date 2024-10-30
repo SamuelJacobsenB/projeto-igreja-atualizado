@@ -17,6 +17,8 @@ import {
   IoLogIn,
   IoLogOut,
   IoImage,
+  IoTrash,
+  IoPencil,
 } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -40,6 +42,8 @@ const I = {
   Login: IoLogIn,
   Logout: IoLogOut,
   Image: IoImage,
+  Trash: IoTrash,
+  Pencil: IoPencil,
 };
 
 export default I;

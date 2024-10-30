@@ -7,11 +7,20 @@ import "./styles.scss";
 interface ImgProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
+  layout?: string;
+  className?: string;
 }
 
-const Img: React.FC<ImgProps> = ({ src, alt, width, height }: ImgProps) => {
+const Img: React.FC<ImgProps> = ({
+  src,
+  alt,
+  width,
+  height,
+  layout,
+  className,
+}: ImgProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
@@ -20,8 +29,9 @@ const Img: React.FC<ImgProps> = ({ src, alt, width, height }: ImgProps) => {
       alt={alt}
       width={width}
       height={height}
+      layout={layout}
       onLoad={() => setIsLoading(false)}
-      className={isLoading ? "blur" : ""}
+      className={isLoading ? `blur ${className}` : `${className}`}
     />
   );
 };

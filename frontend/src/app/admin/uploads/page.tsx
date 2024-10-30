@@ -21,26 +21,39 @@ const AdminUploads: React.FC = () => {
   return (
     <AdminDefaultLayout>
       <div className="upload page">
-        <h1>Arquivos: </h1>
+        <h1>Veja os arquivos: </h1>
         <hr />
-        <div className="default_files">
-          <h1>Arquivos padrão</h1>
+        <Container className="default_files files">
+          <h1>Arquivos padrão: </h1>
           {defaultFiles.map((file) => (
-            <Container key={file.id}>
-              <Img src={file.data} alt={file.name} width={100} height={100} />
+            <Container key={file.id} className="file_container">
+              <Img
+                src={file.data}
+                alt={file.name}
+                width={100}
+                height={100}
+                className="container_image"
+              />
               <h2>{file.name}</h2>
             </Container>
           ))}
-        </div>
-        <div className="warning_files">
-          <h1>Arquivos de avisos</h1>
+        </Container>
+        <Container className="warning_files files">
+          <h1>Arquivos de avisos: </h1>
           {warningFiles.map((file) => (
-            <Container key={file.id}>
-              <Img src={file.data} alt={file.name} width={100} height={100} />
+            <Container key={file.id} className="file_container">
+              <Img
+                src={file.data}
+                alt={file.name}
+                className="container_image"
+                width={0}
+                height={0}
+                layout="responsive"
+              />
               <h2>{file.name}</h2>
             </Container>
           ))}
-        </div>
+        </Container>
       </div>
     </AdminDefaultLayout>
   );

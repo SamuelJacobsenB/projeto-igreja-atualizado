@@ -24,7 +24,7 @@ const AdminLinks: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link href={"/admin/upload"}>
+        <Link href={"/admin/uploads"}>
           <I.Image />
           Modificar arquivos
         </Link>
