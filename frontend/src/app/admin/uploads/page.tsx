@@ -8,6 +8,7 @@ import Container from "@/components/shared/container/container";
 import Img from "@/components/shared/img/img";
 import { getFilesByType } from "@/functions/getFilesByType";
 import "./styles.scss";
+import { Two_buttons } from "@/components/shared/twoButtons/twoButtons";
 
 const AdminUploads: React.FC = () => {
   const { files, loading, error } = useFiles();
@@ -50,7 +51,10 @@ const AdminUploads: React.FC = () => {
                 height={0}
                 layout="responsive"
               />
-              <h2>{file.name}</h2>
+              <Two_buttons.root>
+                <Two_buttons.btn.edit onClick={() => {}} />
+                <Two_buttons.btn.delete onClick={() => {}} />
+              </Two_buttons.root>
             </Container>
           ))}
         </Container>
