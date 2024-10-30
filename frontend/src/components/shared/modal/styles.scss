@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,9 +19,11 @@
     justify-content: space-around;
     flex-direction: column;
     gap: 10px;
+    background-color: white;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: fit-content;
+    padding: 10px;
     border-radius: 8px;
 
     h1 {
@@ -38,10 +40,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      gap: 10px;
 
       button {
         color: white;
         font-size: $p-size;
+        width: 100%;
         padding: 10px;
         border-radius: 8px;
         border: none;

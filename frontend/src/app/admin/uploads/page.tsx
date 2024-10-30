@@ -53,7 +53,11 @@ const AdminUploads: React.FC = () => {
               />
               <Two_buttons.root>
                 <Two_buttons.btn.edit onClick={() => {}} />
-                <Two_buttons.btn.delete onClick={() => {}} />
+                <Two_buttons.btn.delete
+                  onClick={() => {
+                    console.log("hello");
+                  }}
+                />
               </Two_buttons.root>
             </Container>
           ))}
