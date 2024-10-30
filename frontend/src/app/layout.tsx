@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
 
-import Message from "@/components/shared/message/Message";
 import Providers from "@/contexts/provider";
+import Message from "@/components/shared/message/message";
+import Modal from "@/components/shared/modal/modal";
 
 export const metadata: Metadata = {
   title: "PIBSGP",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <div className="view">
             {children}
             <Message />
+            <Modal />
           </div>
         </Providers>
       </body>

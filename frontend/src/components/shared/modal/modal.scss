@@ -1,0 +1,71 @@
+@import "../../../styles/variables.scss";
+
+.modal_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: fit-content;
+    border-radius: 8px;
+
+    h1 {
+      font-size: $title-size;
+    }
+
+    p {
+      font-size: $p-size;
+      text-align: justify;
+      text-indent: 10px;
+    }
+
+    .btn_area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        color: white;
+        font-size: $p-size;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        transition: 0.4s;
+        cursor: pointer;
+
+        &.cancel {
+          background-color: $light-red;
+
+          &:hover {
+            background-color: $red;
+            text-decoration: underline;
+          }
+        }
+
+        &.confirm {
+          background-color: $light-green;
+
+          &:hover {
+            background-color: $green;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

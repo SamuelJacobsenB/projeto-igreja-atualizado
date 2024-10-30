@@ -4,6 +4,7 @@ interface ModalContextProps {
   message: string | null;
   handleAction: () => void;
   showModal: (msg: string, action: () => void) => void;
+  closeModal: () => void;
 }
 
 const ModalContext = createContext<ModalContextProps>({} as ModalContextProps);
@@ -17,8 +18,15 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
     setHandleAction(action);
   }, []);
 
+  const closeModal = useCallback(() => {
+    setMessage(null);
+    setHandleAction(() => {});
+  }, []);
+
   return (
-    <ModalContext.Provider value={{ message, handleAction, showModal }}>
+    <ModalContext.Provider
+      value={{ message, handleAction, showModal, closeModal }}
+    >
       {children}
     </ModalContext.Provider>
   );
