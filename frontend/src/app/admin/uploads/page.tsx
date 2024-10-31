@@ -45,10 +45,14 @@ const AdminUploads: React.FC = () => {
         throw new Error();
       }
 
-      await controller.delete(`/uploads/${id}`, token);
+      await controller.delete(`/upload/${id}`, token).then((res) => {
+        if (res.error) {
+          showMessage(res.error, "error");
+        }
 
-      showMessage("Arquivo excluído com sucesso!", "success");
-      router.refresh();
+        showMessage("Arquivo excluído com sucesso!", "success");
+        router.refresh();
+      });
     } catch (error) {
       showMessage("Não foi possível excluir o arquivo", "error");
     }
@@ -80,10 +84,11 @@ const AdminUploads: React.FC = () => {
                 height={100}
                 className="container_image"
               />
-              <Two_buttons.default
-                onEdit={() => handleEdit(file.id)}
-                onDelete={async () => await handleDelete(file.id)}
-              />
+              <Two_buttons.root>
+                <Two_buttons.btn.delete
+                  onClick={async () => await handleDelete(file.id)}
+                />
+              </Two_buttons.root>
             </Container>
           ))}
         </Container>
@@ -101,10 +106,11 @@ const AdminUploads: React.FC = () => {
                 height={0}
                 layout="responsive"
               />
-              <Two_buttons.default
-                onEdit={() => handleEdit(file.id)}
-                onDelete={async () => await handleDelete(file.id)}
-              />
+              <Two_buttons.root>
+                <Two_buttons.btn.delete
+                  onClick={async () => await handleDelete(file.id)}
+                />
+              </Two_buttons.root>
             </Container>
           ))}
         </Container>

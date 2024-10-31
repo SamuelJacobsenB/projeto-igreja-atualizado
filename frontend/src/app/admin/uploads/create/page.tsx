@@ -33,20 +33,31 @@ const CreateUpload: React.FC = () => {
 
     const token = localStorage.getItem("token");
 
-    if (!type || type === "" || type === null || type === undefined) {
+    if (
+      !type ||
+      type === "" ||
+      type === null ||
+      type === undefined ||
+      file === null
+    ) {
       showMessage("Defina um tipo para imagem", "error");
       return;
     }
 
     if (token) {
+      const formData = new FormData();
+      formData.append("file", file);
+
       await controller
-        .post(`/upload/${type.toLowerCase()}`, { file, type }, token)
-        .then(() => {
+        .post(`/upload/${type.toLowerCase()}`, formData, token)
+        .then((res) => {
+          if (res.error) {
+            showMessage(res.error, "error");
+            return;
+          }
+
           showMessage("Arquivo salvo com sucesso", "success");
           router.push("/admin/uploads");
-        })
-        .catch((error) => {
-          showMessage(error.error, "error");
         });
     }
   };
