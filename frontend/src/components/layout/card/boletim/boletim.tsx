@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss";
 
 interface BoletimCardProps {
+  children?: React.ReactNode;
   title: string;
   created_at: string;
   className?: string;
@@ -9,6 +10,7 @@ interface BoletimCardProps {
 }
 
 const Boletim: React.FC<BoletimCardProps> = ({
+  children,
   title,
   created_at,
   className,
@@ -19,9 +21,12 @@ const Boletim: React.FC<BoletimCardProps> = ({
   return (
     <div className={`boletim_card ${className}`} onClick={onClick}>
       <h3>{title}</h3>
-      <article>
-        <time dateTime={created_at}>{boletimDate.toLocaleDateString()}</time>
-      </article>
+      {created_at && (
+        <article>
+          <time dateTime={created_at}>{boletimDate.toLocaleDateString()}</time>
+        </article>
+      )}
+      {children && children}
     </div>
   );
 };
