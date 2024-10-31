@@ -14,6 +14,7 @@ interface InputProps {
   value: any;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   icon: React.ReactNode;
+  className?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -27,6 +28,7 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   icon,
+  className,
 }: InputProps) => {
   const input: any = useRef();
 
@@ -50,6 +52,7 @@ const Input: React.FC<InputProps> = ({
           maxLength={maxLength}
           required={required}
           ref={input}
+          className={className}
         />
         <div className="icon">{icon}</div>
       </div>

@@ -1,35 +1,28 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useUser } from "@/contexts/user.context";
 
 export function useVerify(verifyRole: "ADMIN" | "USER") {
-  const { role } = useUser();
+  const { role, getting } = useUser();
   const [verified, setVerified] = useState<boolean | null>(null);
   const [verifing, setVerifing] = useState<boolean>(true);
 
-  useEffect(() => {
+  const verify = useCallback(() => {
     if (!role) {
       setVerified(false);
-      setVerifing(false);
-      return;
-    }
-
-    if (role === "ADMIN") {
+    } else if (role === "ADMIN" || verifyRole === role) {
       setVerified(true);
-      setVerifing(false);
-      return;
-    }
-
-    if (verifyRole === role) {
-      setVerified(true);
-      setVerifing(false);
-      return;
     } else {
       setVerified(false);
-      setVerifing(false);
     }
+    setVerifing(false);
   }, [role, verifyRole]);
+
+  useEffect(() => {
+    if (!getting) {
+      verify();
+    }
+  }, [getting, verify]);
 
   return { verified, verifing };
 }

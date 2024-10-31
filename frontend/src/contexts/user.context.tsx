@@ -5,6 +5,7 @@ import api from "@/services/api";
 type Role = "USER" | "ADMIN";
 
 interface UserContextProps {
+  getting: boolean;
   name: string | null;
   email: string | null;
   role: Role | null;
@@ -14,6 +15,7 @@ interface UserContextProps {
 const UserContext = createContext<UserContextProps>({} as UserContextProps);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
+  const [getting, setGetting] = useState<boolean>(true);
   const [name, setName] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [role, setRole] = useState<Role | null>(null);
@@ -41,9 +43,16 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
               setName(res.data.name);
               setEmail(res.data.email);
               setRole(res.data.role);
+              setGetting(false);
             })
             .catch(() => {
               localStorage.removeItem("token");
+
+              setName(null);
+              setEmail(null);
+              setRole(null);
+
+              setGetting(false);
             });
         } else {
           localStorage.removeItem("token");
@@ -51,6 +60,8 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
           setName(null);
           setEmail(null);
           setRole(null);
+
+          setGetting(false);
         }
       } else {
         localStorage.removeItem("token");
@@ -58,11 +69,15 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
         setName(null);
         setEmail(null);
         setRole(null);
+
+        setGetting(false);
       }
     } else {
       setName(null);
       setEmail(null);
       setRole(null);
+
+      setGetting(false);
     }
   };
 
@@ -71,7 +86,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ name, email, role, getUser }}>
+    <UserContext.Provider value={{ name, email, role, getUser, getting }}>
       {children}
     </UserContext.Provider>
   );
