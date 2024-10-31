@@ -11,7 +11,7 @@ interface InputProps {
   minLength?: number;
   maxLength?: number;
   required: boolean;
-  value: string;
+  value: any;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   icon: React.ReactNode;
 }

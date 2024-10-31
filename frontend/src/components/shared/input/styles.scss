@@ -27,6 +27,10 @@
       border-right: none;
     }
 
+    input[type="file"] {
+      padding: 10px;
+    }
+
     div.icon {
       display: flex;
       align-items: center;

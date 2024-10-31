@@ -17,14 +17,40 @@
     gap: 10px;
     color: white;
     font-size: $big-size;
-    cursor: pointer;
 
-    &:hover {
-      text-decoration: underline;
+    &.not_logged {
+      h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $big-size;
+        padding-right: 10px;
+        border-right: 1px solid white;
+      }
+
+      p {
+        font-size: $p-size;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
-    p {
-      font-size: $p-size;
+    &.logged {
+      h2 {
+        font-size: $big-size;
+        padding-right: 10px;
+        border-right: 1px solid white;
+      }
+
+      p {
+        font-size: $p-size;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

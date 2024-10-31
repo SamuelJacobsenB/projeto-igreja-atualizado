@@ -7,10 +7,16 @@ import I from "@/components/icons/icons";
 import "./styles.scss";
 
 const UserLinks: React.FC = () => {
-  const user = useUser();
+  const { role } = useUser();
 
   return (
     <ul>
+      <li style={{ display: role === "ADMIN" ? "flex" : "none" }}>
+        <Link href={"/admin/boletins"}>
+          <I.Person />
+          Administrador
+        </Link>
+      </li>
       <li>
         <Link href={"/"}>
           <I.Home />
@@ -58,10 +64,6 @@ const UserLinks: React.FC = () => {
           <I.Login />
           Entrar
         </Link>
-      </li>
-      <li className="logout" style={{ display: user ? "flex" : "none" }}>
-        <I.Logout />
-        Sair
       </li>
     </ul>
   );

@@ -6,6 +6,11 @@
   flex-direction: column;
   gap: 20px;
 
+  button {
+    margin: 10px;
+    width: 90%;
+  }
+
   h1 {
     font-size: $title-size;
     margin: 10px;

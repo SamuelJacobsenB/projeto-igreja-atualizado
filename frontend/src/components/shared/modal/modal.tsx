@@ -5,12 +5,7 @@ import { useModal } from "@/contexts/modal.context";
 import "./styles.scss";
 
 const Modal: React.FC = () => {
-  const { message, handleAction, closeModal } = useModal();
-
-  const executeAction = () => {
-    handleAction;
-    closeModal();
-  };
+  const { message, closeModal, executeAction } = useModal();
 
   if (!message) {
     return null;
@@ -26,7 +21,10 @@ const Modal: React.FC = () => {
             <button onClick={closeModal} className="cancel">
               Cancelar
             </button>
-            <button onClick={executeAction} className="confirm">
+            <button
+              onClick={async () => await executeAction()}
+              className="confirm"
+            >
               Confirmar
             </button>
           </div>

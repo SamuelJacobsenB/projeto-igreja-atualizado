@@ -3,6 +3,9 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useFiles } from "@/hooks/useFiles";
+import { useVerify } from "@/hooks/useVerify";
+import { useMessage } from "@/contexts/message.context";
+import { Controller } from "@/services/controller";
 import AdminDefaultLayout from "@/components/layout/adminDefult";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import Container from "@/components/shared/container/container";
@@ -10,11 +13,11 @@ import Img from "@/components/shared/img/img";
 import { Two_buttons } from "@/components/shared/twoButtons/twoButtons";
 import { getFilesByType } from "@/functions/getFilesByType";
 import "./styles.scss";
-import { useVerify } from "@/hooks/useVerify";
-import { useMessage } from "@/contexts/message.context";
+import Button from "@/components/shared/button/button";
 
 const AdminUploads: React.FC = () => {
   const router = useRouter();
+  const controller = new Controller();
   const { showMessage } = useMessage();
   const { files, loading, error } = useFiles();
   const { verified, verifing } = useVerify("ADMIN");
@@ -34,9 +37,33 @@ const AdminUploads: React.FC = () => {
     router.push(`/admin/uploads/${id}`);
   };
 
+  const handleDelete = async (id: string) => {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        throw new Error();
+      }
+
+      await controller.delete(`/uploads/${id}`, token);
+
+      showMessage("Arquivo excluído com sucesso!", "success");
+      router.refresh();
+    } catch (error) {
+      showMessage("Não foi possível excluir o arquivo", "error");
+    }
+  };
+
   return (
     <AdminDefaultLayout>
       <div className="upload page">
+        <Button
+          onClick={() => router.push("/admin/uploads/create")}
+          color="primary"
+        >
+          Cadastrar novo arquivo
+        </Button>
+
         <h1>Veja os arquivos: </h1>
 
         <hr />
@@ -55,7 +82,7 @@ const AdminUploads: React.FC = () => {
               />
               <Two_buttons.default
                 onEdit={() => handleEdit(file.id)}
-                onDelete={async () => {}}
+                onDelete={async () => await handleDelete(file.id)}
               />
             </Container>
           ))}
@@ -76,7 +103,7 @@ const AdminUploads: React.FC = () => {
               />
               <Two_buttons.default
                 onEdit={() => handleEdit(file.id)}
-                onDelete={async () => {}}
+                onDelete={async () => await handleDelete(file.id)}
               />
             </Container>
           ))}

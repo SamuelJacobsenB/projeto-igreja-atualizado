@@ -1,14 +1,9 @@
-"use client";
-
 import React from "react";
-import { useUser } from "@/contexts/user.context";
 import Link from "next/link";
 import I from "@/components/icons/icons";
 import "./styles.scss";
 
 const AdminLinks: React.FC = () => {
-  const user = useUser();
-
   return (
     <ul>
       <li>
@@ -40,10 +35,6 @@ const AdminLinks: React.FC = () => {
           <I.Login />
           Entrar
         </Link>
-      </li>
-      <li className="logout" style={{ display: user ? "flex" : "none" }}>
-        <I.Logout />
-        Sair
       </li>
     </ul>
   );

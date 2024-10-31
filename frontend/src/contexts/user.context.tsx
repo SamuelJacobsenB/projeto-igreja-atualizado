@@ -45,8 +45,24 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
             .catch(() => {
               localStorage.removeItem("token");
             });
+        } else {
+          localStorage.removeItem("token");
+
+          setName(null);
+          setEmail(null);
+          setRole(null);
         }
+      } else {
+        localStorage.removeItem("token");
+
+        setName(null);
+        setEmail(null);
+        setRole(null);
       }
+    } else {
+      setName(null);
+      setEmail(null);
+      setRole(null);
     }
   };
 
