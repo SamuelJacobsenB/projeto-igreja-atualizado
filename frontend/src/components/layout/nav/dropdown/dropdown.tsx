@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import I from "@/components/icons/icons";
 import "./styles.scss";
@@ -11,7 +10,6 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ submenu }) => {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -30,7 +28,13 @@ const Dropdown: React.FC<DropdownProps> = ({ submenu }) => {
             if (item.type === "link") {
               return (
                 <li key={i}>
-                  <Link href={`${submenu.path}/${item.path}`}>
+                  <Link
+                    href={
+                      item.admin === true
+                        ? `/admin/${submenu.path}/${item.path}`
+                        : `${submenu.path}/${item.path}`
+                    }
+                  >
                     <item.icon />
                     {item.name}
                   </Link>
