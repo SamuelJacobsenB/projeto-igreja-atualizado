@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useMessage } from "@/contexts/message.context";
 import { useVerify } from "@/hooks/useVerify";
-import { useOneWarning } from "@/hooks/useOneWarning";
 import { Controller } from "@/services/controller";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import { FormPage } from "@/components/layout/formPage/formPage";
@@ -12,28 +11,16 @@ import Input from "@/components/shared/input/input";
 import I from "@/components/icons/icons";
 import Textarea from "@/components/shared/textarea/textarea";
 
-const EditWarning: React.FC = () => {
+const CreateWarning: React.FC = () => {
   const router = useRouter();
-  const { id } = useParams();
   const controller = new Controller();
   const { verified, verifing } = useVerify("ADMIN");
   const { showMessage } = useMessage();
-  const { warning, loading, error } = useOneWarning(id as string);
 
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  useEffect(() => {
-    if (warning) {
-      setTitle(warning.title);
-      setContent(warning.content);
-    } else {
-      showMessage("Parece que houve um erro", "error");
-      router.push("/admin/warnings");
-    }
-  }, [warning, router, showMessage]);
-
-  if (verifing || loading) {
+  if (verifing) {
     return <LoadPage />;
   }
 
@@ -42,34 +29,34 @@ const EditWarning: React.FC = () => {
     router.push("/login");
   }
 
-  const handleEditWarning = async (evt: React.FormEvent<HTMLFormElement>) => {
+  const handleCreateWarning = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     const token = localStorage.getItem("token");
 
     if (token) {
       await controller
-        .patch(`/warning/${id}`, { title, content }, token)
+        .post("/warning", { title, content }, token)
         .then((res) => {
           if (res.error) {
             showMessage(res.error, "error");
             return;
           }
 
-          showMessage("Aviso editado com sucesso!", "success");
-          router.push("/admin/warnings");
+          showMessage("Aviso cadastrado com sucesso!", "success");
+          router.push("/admin/avisos");
         });
     }
   };
 
   return (
-    <div className="edit_warning">
+    <div className="create_warning">
       <FormPage.root>
         <FormPage.formImage />
         <FormPage.formArea
-          backUrl="/admin/warnings"
-          title="Edite este aviso:"
-          onSubmit={async (evt) => await handleEditWarning(evt)}
+          backUrl="/admin/avisos"
+          title="Cadastre um aviso:"
+          onSubmit={async (evt) => await handleCreateWarning(evt)}
         >
           <Input
             label="Título:"
@@ -94,4 +81,4 @@ const EditWarning: React.FC = () => {
   );
 };
 
-export default EditWarning;
+export default CreateWarning;

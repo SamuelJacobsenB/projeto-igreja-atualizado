@@ -25,7 +25,7 @@ const AdminLinks: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link href={"/admin/warnings"}>
+        <Link href={"/admin/avisos"}>
           <I.Warning />
           Modificar avisos
         </Link>

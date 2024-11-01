@@ -37,7 +37,7 @@ const AdminWarnings: React.FC = () => {
         throw new Error();
       }
 
-      await controller.delete(`/warning/${id}`, token).then((res) => {
+      await controller.delete(`/avisos/${id}`, token).then((res) => {
         if (res.error) {
           showMessage(res.error, "error");
         }
@@ -54,7 +54,7 @@ const AdminWarnings: React.FC = () => {
     <AdminDefaultLayout>
       <div className="admin_warnings page">
         <Button
-          onClick={() => router.push("/admin/warnings/create")}
+          onClick={() => router.push("/admin/avisos/create")}
           color="primary"
         >
           Cadastrar novo aviso:
@@ -74,7 +74,7 @@ const AdminWarnings: React.FC = () => {
                 className="warning_modify_card"
               >
                 <Two_buttons.default
-                  onEdit={() => router.push(`/admin/warnings/${warning.id}`)}
+                  onEdit={() => router.push(`/admin/avisos/${warning.id}`)}
                   onDelete={async () => await handleDelete(warning.id)}
                 />
               </Card.Boletim>
