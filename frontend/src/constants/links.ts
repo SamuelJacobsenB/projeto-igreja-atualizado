@@ -94,13 +94,6 @@ export const links = [
     admin: false,
   },
   {
-    path: "/cultos",
-    name: "Cultos",
-    icon: I.Book,
-    type: "link",
-    admin: false,
-  },
-  {
     path: "/warnings",
     name: "Avisos",
     icon: I.Warning,
@@ -114,6 +107,13 @@ export const links = [
     type: "submenu",
     admin: false,
     children: [
+      {
+        path: "/cultos",
+        name: "Cultos",
+        icon: I.Book,
+        type: "link",
+        admin: false,
+      },
       {
         path: "contribua",
         name: "Contribua",

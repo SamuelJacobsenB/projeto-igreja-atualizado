@@ -60,3 +60,20 @@ ul {
     }
   }
 }
+
+@media screen and (min-width: 1000px) {
+  ul {
+    flex-direction: row;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+
+    li {
+      height: 20px;
+
+      &.drop_li {
+        height: 20px;
+      }
+    }
+  }
+}

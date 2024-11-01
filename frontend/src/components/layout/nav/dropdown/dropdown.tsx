@@ -7,9 +7,10 @@ import "./styles.scss";
 
 interface DropdownProps {
   submenu: any;
+  className?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ submenu }) => {
+const Dropdown: React.FC<DropdownProps> = ({ submenu, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -23,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ submenu }) => {
         {isOpen ? <I.ArrowDown /> : <I.ArrowUp />}
       </button>
       {isOpen && (
-        <ul className="dropdown_menu">
+        <ul className={`dropdown_menu ${className}`}>
           {submenu.children.map((item: any, i: number) => {
             if (item.type === "link") {
               return (

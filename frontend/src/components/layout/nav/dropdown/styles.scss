@@ -48,3 +48,36 @@
     }
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .dropdown {
+    ul.dropdown_menu {
+      &.first {
+        position: absolute;
+        top: 216px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background-color: $primary-dark-color;
+        max-width: 200px;
+        height: auto;
+        border-radius: 0 0 8px 8px;
+
+        li {
+          position: relative;
+          margin-top: 0;
+          width: fit-content;
+          height: auto;
+          padding: 8px;
+          margin: 4px;
+
+          &:hover {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

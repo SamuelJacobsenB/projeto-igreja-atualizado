@@ -9,7 +9,32 @@
   width: 100%;
   max-width: 600px;
 
+  .nav_menu_links {
+    display: none;
+  }
+
   .burguer {
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $subtitle-size;
+    color: white;
+    width: 100%;
+    max-width: none;
+
+    .nav_menu_links {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .burguer {
+      display: none;
+    }
   }
 }

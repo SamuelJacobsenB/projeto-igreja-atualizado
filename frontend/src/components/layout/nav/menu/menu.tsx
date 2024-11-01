@@ -17,6 +17,7 @@ const Menu: React.FC = () => {
   return (
     <>
       <div className="menu">
+        <NavLinks className="nav_menu_links" />
         <I.Menu className="burguer" onClick={handleToogleMenu} />
         <Profile />
       </div>
