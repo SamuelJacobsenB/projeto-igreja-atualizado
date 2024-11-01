@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.scss";
 
 interface TextAreaBtnProps {
   children: React.ReactNode;
@@ -9,7 +10,11 @@ const TextAreaBtn: React.FC<TextAreaBtnProps> = ({
   children,
   onClick,
 }: TextAreaBtnProps) => {
-  return <button onClick={onClick}>{children}</button>;
+  return (
+    <button type="button" className="text_area_btn" onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default TextAreaBtn;

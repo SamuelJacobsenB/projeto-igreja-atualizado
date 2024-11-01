@@ -1,0 +1,81 @@
+@import "../../../styles/variables.scss";
+
+.textarea_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-height: none;
+  margin: 10px;
+  padding: 14px;
+
+  label {
+    font-size: $big-size;
+    cursor: pointer;
+  }
+
+  .textarea {
+    width: 100%;
+    max-height: none;
+    border-radius: 8px;
+
+    .btn_area {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      border: 2px solid $primary-color;
+    }
+
+    textarea {
+      text-align: justify;
+      font-size: $p-size;
+      width: 100%;
+      min-height: 200px;
+      padding: 10px;
+      border: 2px solid $primary-color;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}
+
+// .input {
+//   width: 100%;
+//   margin: 10px;
+//   padding: 16px;
+
+//   label {
+//     font-size: $big-size;
+//     cursor: pointer;
+//   }
+
+//   div.input_area {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 100%;
+//     cursor: pointer;
+
+//     input {
+//       font-size: $p-size;
+//       width: 86%;
+//       height: 50px;
+//       padding: 20px;
+//       border: 2px solid $primary-color;
+//       border-radius: 8px 0px 0px 8px;
+//       border-right: none;
+//     }
+
+//     div.icon {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       background-color: $primary-color;
+//       font-size: $p-size;
+//       color: white;
+//       width: 14%;
+//       height: 50px;
+//       border: 2px solid $primary-color;
+//       border-radius: 0px 8px 8px 0px;
+//     }
+//   }
+// }

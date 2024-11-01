@@ -1,5 +1,7 @@
 import React from "react";
+import TextAreaBtn from "./btn/btn";
 import "./styles.scss";
+import DefaultBtnArea from "./btn/default";
 
 interface TextareaProps {
   setValue: React.Dispatch<React.SetStateAction<string>>;
@@ -24,8 +26,10 @@ const Textarea: React.FC<TextareaProps> = ({
     <div className={`textarea_box ${className}`}>
       <label htmlFor={name}>{label}</label>
       <div className="textarea">
-        <div className="btn_area"></div>
-        <input
+        <div className="btn_area">
+          <DefaultBtnArea setValue={setValue} value={value} />
+        </div>
+        <textarea
           name={name}
           id={name}
           value={value}

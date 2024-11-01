@@ -1,0 +1,21 @@
+@import "../../../../styles/variables.scss";
+
+.text_area_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $primary-color;
+  font-size: $p-size;
+  width: 100%;
+  max-width: 120px;
+  height: 30px;
+  border: 1px solid $primary-color;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+}
