@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useBoletins } from "@/hooks/useBoletins";
 import { useMessage } from "@/contexts/message.context";
@@ -11,6 +11,8 @@ import LoadPage from "@/components/layout/loadPage/loadPage";
 import Button from "@/components/shared/button/button";
 import { Card } from "@/components/layout/card/card";
 import { Two_buttons } from "./../../../components/shared/twoButtons/twoButtons";
+import Search from "@/components/shared/search/search";
+import { Boletim } from "@/types/boletim.type";
 import "./styles.scss";
 
 const AdminBoletins: React.FC = () => {
@@ -19,6 +21,13 @@ const AdminBoletins: React.FC = () => {
   const { boletins, loading, error } = useBoletins();
   const { verified, verifing } = useVerify("ADMIN");
   const { showMessage } = useMessage();
+  const [boletimList, setBoletimList] = useState<Boletim[]>([]);
+
+  useEffect(() => {
+    if (boletins) {
+      setBoletimList(boletins);
+    }
+  }, [boletins]);
 
   if (loading || verifing) {
     return <LoadPage />;
@@ -64,9 +73,15 @@ const AdminBoletins: React.FC = () => {
 
         <hr />
 
+        <Search
+          placeholder="Pesquise por boletins"
+          fixedItens={boletins}
+          setItens={setBoletimList}
+        />
+
         <div className="boletim_list">
           {boletins.length > 0 &&
-            boletins.map((boletim) => (
+            boletimList.map((boletim) => (
               <Card.Boletim
                 title={boletim.title}
                 created_at={boletim.created_at}

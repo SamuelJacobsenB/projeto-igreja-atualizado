@@ -2,20 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { Controller } from "@/services/controller";
-import { Boletim } from "@/types/boletim.type";
+import { Warning } from "@/types/warning.type";
 
-export function useBoletins() {
-  const [boletins, setBoletins] = useState<Boletim[]>([]);
+export function useWarnings() {
+  const [warnings, setWarnings] = useState<Warning[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const controller = new Controller();
 
-    const getBoletins = async () => {
+    const getWarnings = async () => {
       try {
-        const res: Boletim[] = await controller.get("/boletim");
-        setBoletins(res);
+        const res: Warning[] = await controller.get("/warning");
+        setWarnings(res);
       } catch (err) {
         setError(err as Error);
       } finally {
@@ -23,8 +23,8 @@ export function useBoletins() {
       }
     };
 
-    getBoletins();
+    getWarnings();
   }, []);
 
-  return { boletins, loading, error };
+  return { warnings, loading, error };
 }
