@@ -31,6 +31,9 @@ const DefaultBtnArea: React.FC<DefaultBtnAreaProps> = ({
       <TextAreaBtn onClick={() => handleAddLink(true)}>
         Link externo
       </TextAreaBtn>
+      <TextAreaBtn onClick={() => handleAddTag("br")}>
+        Quebra de linha
+      </TextAreaBtn>
     </>
   );
 };

@@ -74,7 +74,7 @@ const AdminWarnings: React.FC = () => {
                 className="warning_modify_card"
               >
                 <Two_buttons.default
-                  onEdit={() => router.push(`/admin/boletins/${warning.id}`)}
+                  onEdit={() => router.push(`/admin/warnings/${warning.id}`)}
                   onDelete={async () => await handleDelete(warning.id)}
                 />
               </Card.Boletim>

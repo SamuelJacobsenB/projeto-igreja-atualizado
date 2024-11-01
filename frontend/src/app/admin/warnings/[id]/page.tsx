@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useMessage } from "@/contexts/message.context";
 import { useVerify } from "@/hooks/useVerify";
-import { useOneBoletim } from "@/hooks/useOneBoletim";
+import { useOneWarning } from "@/hooks/useOneWarning";
 import { Controller } from "@/services/controller";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import { FormPage } from "@/components/layout/formPage/formPage";
@@ -12,28 +12,26 @@ import Input from "@/components/shared/input/input";
 import I from "@/components/icons/icons";
 import Textarea from "@/components/shared/textarea/textarea";
 
-const EditBoletim: React.FC = () => {
+const EditWarning: React.FC = () => {
   const router = useRouter();
   const { id } = useParams();
   const controller = new Controller();
   const { verified, verifing } = useVerify("ADMIN");
   const { showMessage } = useMessage();
-  const { boletim, loading, error } = useOneBoletim(id as string);
+  const { warning, loading, error } = useOneWarning(id as string);
 
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
 
   useEffect(() => {
-    if (boletim) {
-      setTitle(boletim.title);
-      setContent(boletim.content);
-      setAuthor(boletim.author);
+    if (warning) {
+      setTitle(warning.title);
+      setContent(warning.content);
     } else {
       showMessage("Parece que houve um erro", "error");
-      router.push("/admin/boletins");
+      router.push("/admin/warnings");
     }
-  }, [boletim, router, showMessage]);
+  }, [warning, router, showMessage]);
 
   if (verifing || loading) {
     return <LoadPage />;
@@ -44,34 +42,34 @@ const EditBoletim: React.FC = () => {
     router.push("/login");
   }
 
-  const handleEditBoletim = async (evt: React.FormEvent<HTMLFormElement>) => {
+  const handleEditWarning = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     const token = localStorage.getItem("token");
 
     if (token) {
       await controller
-        .patch(`/boletim/${id}`, { title, content, author }, token)
+        .patch(`/warning/${id}`, { title, content }, token)
         .then((res) => {
           if (res.error) {
             showMessage(res.error, "error");
             return;
           }
 
-          showMessage("Boletim cadastrado com sucesso!", "success");
-          router.push("/admin/boletins");
+          showMessage("Aviso editado com sucesso!", "success");
+          router.push("/admin/warnings");
         });
     }
   };
 
   return (
-    <div className="edit_boletim">
+    <div className="edit_warning">
       <FormPage.root>
         <FormPage.formImage />
         <FormPage.formArea
-          backUrl="/admin/boletins"
-          title="Edite este boletim:"
-          onSubmit={async (evt) => await handleEditBoletim(evt)}
+          backUrl="/admin/warnings"
+          title="Edite este aviso:"
+          onSubmit={async (evt) => await handleEditWarning(evt)}
         >
           <Input
             label="Título:"
@@ -87,18 +85,8 @@ const EditBoletim: React.FC = () => {
             setValue={setContent}
             value={content}
             name="text_area"
-            placeholder="Seu conteúdo do boletim"
+            placeholder="Seu conteúdo do aviso"
             label="Conteúdo:"
-          />
-          <Input
-            label="Autor:"
-            type="text"
-            name="author"
-            value={author}
-            onChange={(evt) => setAuthor(evt.target.value)}
-            placeholder="Nome do autor"
-            required
-            icon={<I.Person />}
           />
         </FormPage.formArea>
       </FormPage.root>
@@ -106,4 +94,4 @@ const EditBoletim: React.FC = () => {
   );
 };
 
-export default EditBoletim;
+export default EditWarning;

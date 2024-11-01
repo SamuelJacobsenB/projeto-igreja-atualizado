@@ -58,7 +58,7 @@ const EditBoletim: React.FC = () => {
             return;
           }
 
-          showMessage("Boletim cadastrado com sucesso!", "success");
+          showMessage("Boletim editado com sucesso!", "success");
           router.push("/admin/boletins");
         });
     }
