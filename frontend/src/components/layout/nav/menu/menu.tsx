@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import I from "@/components/icons/icons";
 import SideBar from "../../sidebar/sidebar";
-import UserLinks from "../userLinks/userLinks";
+import NavLinks from "../navLinks/navLinks";
 import Profile from "../../profile/profile";
 import "./styles.scss";
 
-const UserMenu: React.FC = () => {
+const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToogleMenu = (): void => {
@@ -22,11 +22,11 @@ const UserMenu: React.FC = () => {
       </div>
       {isOpen && (
         <SideBar setIsOpen={setIsOpen}>
-          <UserLinks />
+          <NavLinks />
         </SideBar>
       )}
     </>
   );
 };
 
-export default UserMenu;
+export default Menu;

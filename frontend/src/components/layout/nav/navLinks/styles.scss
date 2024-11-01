@@ -1,14 +1,11 @@
 @import "../../../../styles/variables.scss";
 
 ul {
-  align-items: center;
-  justify-content: space-around;
+  display: flex;
   flex-direction: column;
-  gap: 20px;
   list-style-type: none;
   width: 100%;
   max-height: none;
-  padding: 40px;
 
   li {
     display: flex;
@@ -17,11 +14,17 @@ ul {
     font-size: $p-size;
     width: 100%;
     height: 40px;
-    margin-top: 20px;
     padding: 10px;
     border-radius: 8px;
     transition: 0.4s;
     cursor: pointer;
+
+    &.drop_li {
+      height: auto;
+      max-height: none;
+      padding: 0;
+      border-radius: none;
+    }
 
     &:hover {
       background-color: $primary-color;

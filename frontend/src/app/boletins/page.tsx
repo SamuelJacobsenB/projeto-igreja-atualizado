@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import UserDefaultLayout from "@/components/layout/userDefaultLayout";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import Search from "@/components/shared/search/search";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import { useBoletins } from "@/hooks/useBoletins";
@@ -24,7 +24,7 @@ const Boletins: React.FC = () => {
   }
 
   return (
-    <UserDefaultLayout>
+    <DefaultLayout>
       <div className="boletins page">
         <h1>Veja todos os boletins listados abaixo:</h1>
         <Search
@@ -44,7 +44,7 @@ const Boletins: React.FC = () => {
             ))}
         </div>
       </div>
-    </UserDefaultLayout>
+    </DefaultLayout>
   );
 };
 

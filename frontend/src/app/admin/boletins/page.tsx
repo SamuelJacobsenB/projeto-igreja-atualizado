@@ -6,7 +6,7 @@ import { useBoletins } from "@/hooks/useBoletins";
 import { useMessage } from "@/contexts/message.context";
 import { useVerify } from "@/hooks/useVerify";
 import { Controller } from "@/services/controller";
-import AdminDefaultLayout from "@/components/layout/adminDefult";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import Button from "@/components/shared/button/button";
 import { Card } from "@/components/layout/card/card";
@@ -60,7 +60,7 @@ const AdminBoletins: React.FC = () => {
   };
 
   return (
-    <AdminDefaultLayout>
+    <DefaultLayout>
       <div className="admin_boletins page">
         <Button
           onClick={() => router.push("/admin/boletins/create")}
@@ -97,7 +97,7 @@ const AdminBoletins: React.FC = () => {
         </div>
         {boletins.length === 0 && <h2>Nenhum boletim cadastrado.</h2>}
       </div>
-    </AdminDefaultLayout>
+    </DefaultLayout>
   );
 };
 

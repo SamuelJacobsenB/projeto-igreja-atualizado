@@ -6,6 +6,7 @@ import SideBar from "../../../sidebar/sidebar";
 import AdminLinks from "../../adminLinks/userLinks/adminLinks";
 import Profile from "../../../profile/profile";
 import "./styles.scss";
+import Dropdown from "../../dropdown/dropdown";
 
 const AdminMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

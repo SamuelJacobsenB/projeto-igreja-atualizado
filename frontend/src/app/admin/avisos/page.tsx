@@ -6,7 +6,7 @@ import { useWarnings } from "@/hooks/useWarnings";
 import { useMessage } from "@/contexts/message.context";
 import { useVerify } from "@/hooks/useVerify";
 import { Controller } from "@/services/controller";
-import AdminDefaultLayout from "@/components/layout/adminDefult";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import Button from "@/components/shared/button/button";
 import { Card } from "@/components/layout/card/card";
@@ -51,7 +51,7 @@ const AdminWarnings: React.FC = () => {
   };
 
   return (
-    <AdminDefaultLayout>
+    <DefaultLayout>
       <div className="admin_warnings page">
         <Button
           onClick={() => router.push("/admin/avisos/create")}
@@ -82,7 +82,7 @@ const AdminWarnings: React.FC = () => {
         </div>
         {warnings.length === 0 && <h2>Nenhum aviso cadastrado.</h2>}
       </div>
-    </AdminDefaultLayout>
+    </DefaultLayout>
   );
 };
 

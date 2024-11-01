@@ -19,6 +19,8 @@ import {
   IoImage,
   IoTrash,
   IoPencil,
+  IoChevronDown,
+  IoChevronUp,
 } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -44,6 +46,8 @@ const I = {
   Image: IoImage,
   Trash: IoTrash,
   Pencil: IoPencil,
+  ArrowUp: IoChevronUp,
+  ArrowDown: IoChevronDown,
 };
 
 export default I;

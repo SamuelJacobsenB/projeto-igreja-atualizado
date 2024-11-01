@@ -1,0 +1,50 @@
+@import "../../../../styles/variables.scss";
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  .dropdown_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    font-size: $p-size;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul.dropdown_menu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    padding: 0;
+
+    li {
+      margin-top: 0;
+      width: 80%;
+      margin: 6px;
+
+      &:hover {
+        background-color: $primary-dark-color;
+      }
+    }
+  }
+}

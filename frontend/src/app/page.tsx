@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import UserDefaultLayout from "@/components/layout/userDefaultLayout";
 import { useBoletins } from "@/hooks/useBoletins";
 import { getBoletimSemanal } from "@/functions/getBoletimSemanal";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import Topic from "@/components/shared/topic/topic";
 import LoadPage from "@/components/layout/loadPage/loadPage";
-import "./styles.scss";
 import Container from "@/components/shared/container/container";
 import Social from "@/components/layout/social/social";
+import "./styles.scss";
 
 const Home: React.FC = () => {
   const { boletins, loading, error } = useBoletins();
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   const boletimSemanal = getBoletimSemanal(boletins);
 
   return (
-    <UserDefaultLayout>
+    <DefaultLayout>
       <div className="home page">
         {boletimSemanal ? (
           <Container className="boletim">
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         )}
         <Social />
       </div>
-    </UserDefaultLayout>
+    </DefaultLayout>
   );
 };
 

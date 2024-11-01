@@ -18,7 +18,7 @@ const SideBar: React.FC<SideBarProps> = ({
       <div className="close" onClick={() => setIsOpen(false)}>
         <I.Close />
       </div>
-      {children}
+      <div className="side_content">{children}</div>
     </div>
   );
 };

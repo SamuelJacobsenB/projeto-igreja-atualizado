@@ -3,21 +3,21 @@ import Header from "./header/header";
 import { Nav } from "./nav/nav";
 import Footer from "./footer/footer";
 
-interface UserDefaultLayoutProps {
+interface DefaultLayoutProps {
   children: React.ReactNode;
 }
 
-const UserDefaultLayout: React.FC<UserDefaultLayoutProps> = ({
+const DefaultLayout: React.FC<DefaultLayoutProps> = ({
   children,
-}: UserDefaultLayoutProps) => {
+}: DefaultLayoutProps) => {
   return (
     <>
       <Header />
-      <Nav.default_user />
+      <Nav.default />
       {children}
       <Footer />
     </>
   );
 };
 
-export default UserDefaultLayout;
+export default DefaultLayout;

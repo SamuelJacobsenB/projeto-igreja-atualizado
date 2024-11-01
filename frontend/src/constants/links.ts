@@ -2,7 +2,7 @@ import I from "@/components/icons/icons";
 
 export const links = [
   {
-    path: "/",
+    path: "",
     name: "Principal",
     icon: I.Home,
     type: "link",
@@ -40,7 +40,23 @@ export const links = [
         path: "/contribua",
         name: "Contribua",
         icon: I.Add,
-        type: "link",
+        type: "submenu",
+        children: [
+          {
+            path: "/cultos",
+            name: "Cultos",
+            icon: I.Book,
+            type: "link",
+            admin: false,
+          },
+          {
+            path: "/avisos",
+            name: "Avisos",
+            icon: I.Warning,
+            type: "link",
+            admin: false,
+          },
+        ],
       },
       {
         path: "/contato",

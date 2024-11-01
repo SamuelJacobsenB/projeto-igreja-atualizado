@@ -6,7 +6,7 @@ import { useFiles } from "@/hooks/useFiles";
 import { useVerify } from "@/hooks/useVerify";
 import { useMessage } from "@/contexts/message.context";
 import { Controller } from "@/services/controller";
-import AdminDefaultLayout from "@/components/layout/adminDefult";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import Container from "@/components/shared/container/container";
 import Img from "@/components/shared/img/img";
@@ -59,7 +59,7 @@ const AdminUploads: React.FC = () => {
   };
 
   return (
-    <AdminDefaultLayout>
+    <DefaultLayout>
       <div className="upload page">
         <Button
           onClick={() => router.push("/admin/uploads/create")}
@@ -115,7 +115,7 @@ const AdminUploads: React.FC = () => {
           ))}
         </Container>
       </div>
-    </AdminDefaultLayout>
+    </DefaultLayout>
   );
 };
 

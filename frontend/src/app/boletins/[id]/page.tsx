@@ -3,7 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useOneBoletim } from "@/hooks/useOneBoletim";
-import UserDefaultLayout from "@/components/layout/userDefaultLayout";
+import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import Container from "@/components/shared/container/container";
 import Topic from "@/components/shared/topic/topic";
@@ -18,7 +18,7 @@ const BoletimInfo: React.FC = () => {
     return <LoadPage />;
   }
   return (
-    <UserDefaultLayout>
+    <DefaultLayout>
       <div className="boletim_info page">
         {boletim && (
           <Container className="boletim">
@@ -39,7 +39,7 @@ const BoletimInfo: React.FC = () => {
         )}
         <Social />
       </div>
-    </UserDefaultLayout>
+    </DefaultLayout>
   );
 };
 
