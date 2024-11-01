@@ -89,7 +89,7 @@ const AdminBoletins: React.FC = () => {
                 className="boletim_modify_card"
               >
                 <Two_buttons.default
-                  onEdit={() => router.push(`/admin/warnings/${boletim.id}`)}
+                  onEdit={() => router.push(`/admin/boletins/${boletim.id}`)}
                   onDelete={async () => await handleDelete(boletim.id)}
                 />
               </Card.Boletim>

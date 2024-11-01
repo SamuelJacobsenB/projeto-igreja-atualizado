@@ -36,7 +36,7 @@ const UserLinks: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link href={"/avisos"}>
+        <Link href={"/warnings"}>
           <I.Warning />
           Avisos
         </Link>

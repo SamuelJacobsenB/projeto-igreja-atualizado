@@ -17,7 +17,7 @@ const DeleteBtn: React.FC<DeleteBtnProps> = ({ onClick }: DeleteBtnProps) => {
       className="btn_delete_area"
       onClick={() =>
         showModal(
-          "Você tem total certeza de que quer exculuir este item, esta ação é permanente?",
+          "Você tem total certeza de que quer excluir este item? ( esta ação é permanente )",
           onClick
         )
       }
