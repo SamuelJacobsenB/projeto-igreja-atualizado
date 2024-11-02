@@ -7,6 +7,7 @@ import LoadPage from "@/components/layout/loadPage/loadPage";
 import { useFiles } from "@/hooks/useFiles";
 import { getFilesByType } from "@/functions/getFilesByType";
 import { Card } from "@/components/layout/card/card";
+import Carousel from "@/components/shared/carousel/carousel";
 import "./styles.scss";
 
 const WarningsPage: React.FC = () => {
@@ -24,6 +25,8 @@ const WarningsPage: React.FC = () => {
       <div className="warning_page page">
         <h1>Veja todos os avisos abaixo:</h1>
         <hr />
+
+        <Carousel files={warningFiles} />
 
         <div className="warning_list">
           {warnings.length === 0 && <h2>Nenhum aviso cadastrado.</h2>}

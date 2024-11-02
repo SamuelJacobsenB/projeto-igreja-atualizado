@@ -21,6 +21,8 @@ import {
   IoPencil,
   IoChevronDown,
   IoChevronUp,
+  IoChevronForward,
+  IoChevronBack,
 } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -48,6 +50,8 @@ const I = {
   Pencil: IoPencil,
   ArrowUp: IoChevronUp,
   ArrowDown: IoChevronDown,
+  ArrowLeft: IoChevronBack,
+  ArrowRight: IoChevronForward,
 };
 
 export default I;
