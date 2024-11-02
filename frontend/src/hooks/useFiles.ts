@@ -6,8 +6,8 @@ import { File } from "@/types/file.type";
 
 export function useFiles() {
   const [files, setFiles] = useState<File[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [loadingFiles, setLoading] = useState(true);
+  const [fileError, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const controller = new Controller();
@@ -26,5 +26,5 @@ export function useFiles() {
     getBoletim();
   }, []);
 
-  return { files, loading, error };
+  return { files, loadingFiles, fileError };
 }

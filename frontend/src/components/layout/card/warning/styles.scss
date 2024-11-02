@@ -1,0 +1,22 @@
+@import "../../../../styles/variables.scss";
+
+.warning_card {
+  width: 100%;
+  max-width: 500px;
+  padding: 4px;
+  border: 1px solid $primary-color;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $primary-color;
+    color: white;
+    font-size: $big-size;
+    padding: 4px;
+  }
+
+  div.warning_content {
+    font-size: $p_size;
+  }
+}

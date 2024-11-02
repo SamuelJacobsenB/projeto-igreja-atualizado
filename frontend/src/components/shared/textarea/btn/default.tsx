@@ -22,6 +22,10 @@ const DefaultBtnArea: React.FC<DefaultBtnAreaProps> = ({
     );
   };
 
+  const handleAddBr = () => {
+    setValue(`${value} <br />`);
+  };
+
   return (
     <>
       <TextAreaBtn onClick={() => handleAddTag("p")}>Parágrafo</TextAreaBtn>
@@ -31,9 +35,7 @@ const DefaultBtnArea: React.FC<DefaultBtnAreaProps> = ({
       <TextAreaBtn onClick={() => handleAddLink(true)}>
         Link externo
       </TextAreaBtn>
-      <TextAreaBtn onClick={() => handleAddTag("br")}>
-        Quebra de linha
-      </TextAreaBtn>
+      <TextAreaBtn onClick={() => handleAddBr()}>Quebra de linha</TextAreaBtn>
     </>
   );
 };

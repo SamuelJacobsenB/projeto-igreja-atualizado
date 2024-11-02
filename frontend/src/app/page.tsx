@@ -36,34 +36,6 @@ const Home: React.FC = () => {
         ) : (
           <h2>Nenhum boletim cadastrado esta semana</h2>
         )}
-        {boletimSemanal ? (
-          <Container className="boletim">
-            <Topic>Pastoral</Topic>
-            <h1>{boletimSemanal.title}</h1>
-            <hr />
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
-            />
-            <small>{boletimSemanal.author}</small>
-          </Container>
-        ) : (
-          <h2>Nenhum boletim cadastrado esta semana</h2>
-        )}
-        {boletimSemanal ? (
-          <Container className="boletim">
-            <Topic>Pastoral</Topic>
-            <h1>{boletimSemanal.title}</h1>
-            <hr />
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
-            />
-            <small>{boletimSemanal.author}</small>
-          </Container>
-        ) : (
-          <h2>Nenhum boletim cadastrado esta semana</h2>
-        )}
         <Social />
       </div>
     </DefaultLayout>

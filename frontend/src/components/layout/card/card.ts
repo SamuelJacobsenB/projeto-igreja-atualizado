@@ -1,5 +1,7 @@
-import Boletim from "./boletim/boletim";
+import BoletimCard from "./boletim/boletim";
+import WarningCard from "./warning/warning";
 
 export const Card = {
-  Boletim: Boletim,
+  Boletim: BoletimCard,
+  Warning: WarningCard,
 };

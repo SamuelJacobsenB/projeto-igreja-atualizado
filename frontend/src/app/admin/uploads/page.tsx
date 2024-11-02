@@ -19,10 +19,10 @@ const AdminUploads: React.FC = () => {
   const router = useRouter();
   const controller = new Controller();
   const { showMessage } = useMessage();
-  const { files, loading, error } = useFiles();
+  const { files, loadingFiles, fileError } = useFiles();
   const { verified, verifing } = useVerify("ADMIN");
 
-  if (loading || verifing) {
+  if (loadingFiles || verifing) {
     return <LoadPage />;
   }
 

@@ -108,7 +108,7 @@ export const links = [
     admin: false,
     children: [
       {
-        path: "/cultos",
+        path: "cultos",
         name: "Cultos",
         icon: I.Book,
         type: "link",

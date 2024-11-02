@@ -9,7 +9,7 @@ interface BoletimCardProps {
   onClick?: () => void;
 }
 
-const Boletim: React.FC<BoletimCardProps> = ({
+const BoletimCard: React.FC<BoletimCardProps> = ({
   children,
   title,
   created_at,
@@ -31,4 +31,4 @@ const Boletim: React.FC<BoletimCardProps> = ({
   );
 };
 
-export default Boletim;
+export default BoletimCard;
