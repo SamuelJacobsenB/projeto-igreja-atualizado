@@ -12,7 +12,7 @@ export function useFiles() {
   useEffect(() => {
     const controller = new Controller();
 
-    const getBoletim = async () => {
+    const getFiles = async () => {
       try {
         const res: File[] = await controller.get("/upload");
         setFiles(res);
@@ -23,7 +23,7 @@ export function useFiles() {
       }
     };
 
-    getBoletim();
+    getFiles();
   }, []);
 
   return { files, loadingFiles, fileError };
