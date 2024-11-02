@@ -77,6 +77,11 @@
             background-color: $primary-color;
           }
         }
+
+        &.fixed {
+          position: fixed;
+          top: 66px;
+        }
       }
     }
   }

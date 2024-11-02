@@ -17,12 +17,12 @@ const Menu: React.FC = () => {
   return (
     <>
       <div className="menu">
-        <NavLinks className="nav_menu_links" />
+        <NavLinks className="menu_nav_links" />
         <I.Menu className="burguer" onClick={handleToogleMenu} />
         <Profile />
       </div>
       {isOpen && (
-        <SideBar setIsOpen={setIsOpen}>
+        <SideBar setIsOpen={setIsOpen} className="menu_side_bar">
           <NavLinks />
         </SideBar>
       )}

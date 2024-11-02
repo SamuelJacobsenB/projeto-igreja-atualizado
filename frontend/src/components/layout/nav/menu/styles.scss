@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 600px;
 
-  .nav_menu_links {
+  .menu_nav_links {
     display: none;
   }
 
@@ -28,7 +28,7 @@
     width: 100%;
     max-width: none;
 
-    .nav_menu_links {
+    .menu_nav_links {
       display: flex;
       flex-direction: row;
     }
@@ -36,5 +36,9 @@
     .burguer {
       display: none;
     }
+  }
+
+  .menu_side_bar {
+    display: none;
   }
 }

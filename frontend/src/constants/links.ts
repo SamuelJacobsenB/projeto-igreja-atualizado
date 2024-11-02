@@ -80,7 +80,7 @@ export const links = [
     ],
   },
   {
-    path: "",
+    path: "/",
     name: "Principal",
     icon: I.Home,
     type: "link",
@@ -94,7 +94,7 @@ export const links = [
     admin: false,
   },
   {
-    path: "/warnings",
+    path: "/avisos",
     name: "Avisos",
     icon: I.Warning,
     type: "link",

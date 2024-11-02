@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import I from "@/components/icons/icons";
 import "./styles.scss";
@@ -12,10 +12,27 @@ interface DropdownProps {
 
 const Dropdown: React.FC<DropdownProps> = ({ submenu, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleScroll = () => {
+    if (window.scrollY > 150) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="dropdown">
@@ -24,7 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({ submenu, className }) => {
         {isOpen ? <I.ArrowDown /> : <I.ArrowUp />}
       </button>
       {isOpen && (
-        <ul className={`dropdown_menu ${className}`}>
+        <ul className={`dropdown_menu ${className} ${scrolled ? "fixed" : ""}`}>
           {submenu.children.map((item: any, i: number) => {
             if (item.type === "link") {
               return (
