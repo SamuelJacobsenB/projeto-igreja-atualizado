@@ -2,12 +2,13 @@
 
 import React from "react";
 import { useWarnings } from "@/hooks/useWarnings";
-import DefaultLayout from "@/components/layout/defaultLayout";
-import LoadPage from "@/components/layout/loadPage/loadPage";
 import { useFiles } from "@/hooks/useFiles";
 import { getFilesByType } from "@/functions/getFilesByType";
+import DefaultLayout from "@/components/layout/defaultLayout";
+import LoadPage from "@/components/layout/loadPage/loadPage";
 import { Card } from "@/components/layout/card/card";
 import Carousel from "@/components/shared/carousel/carousel";
+import Social from "@/components/layout/social/social";
 import "./styles.scss";
 
 const WarningsPage: React.FC = () => {
@@ -26,7 +27,7 @@ const WarningsPage: React.FC = () => {
         <h1>Veja todos os avisos abaixo:</h1>
         <hr />
 
-        <Carousel files={warningFiles} />
+        {warningFiles.length > 0 && <Carousel files={warningFiles} />}
 
         <div className="warning_list">
           {warnings.length === 0 && <h2>Nenhum aviso cadastrado.</h2>}
@@ -39,6 +40,8 @@ const WarningsPage: React.FC = () => {
               />
             ))}
         </div>
+
+        <Social />
       </div>
     </DefaultLayout>
   );

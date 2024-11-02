@@ -50,8 +50,8 @@ const I = {
   Pencil: IoPencil,
   ArrowUp: IoChevronUp,
   ArrowDown: IoChevronDown,
-  ArrowLeft: IoChevronBack,
   ArrowRight: IoChevronForward,
+  ArrowLeft: IoChevronBack,
 };
 
 export default I;

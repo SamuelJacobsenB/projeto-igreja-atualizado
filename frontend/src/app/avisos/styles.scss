@@ -24,22 +24,4 @@
       font-size: $subtitle-size;
     }
   }
-
-  .warning_file_list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    height: fit-content;
-    padding: 10px;
-
-    .warning_image {
-      width: 100%;
-      max-width: 400px;
-      height: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-  }
 }

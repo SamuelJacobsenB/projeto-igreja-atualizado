@@ -53,6 +53,7 @@
   .dropdown {
     ul.dropdown_menu {
       &.first {
+        z-index: 1000;
         position: absolute;
         top: 216px;
         display: flex;
