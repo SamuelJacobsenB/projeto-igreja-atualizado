@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.cultos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+
+  h1 {
+    font-size: $title-size;
+    text-align: center;
+    margin: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: none;
+  }
+}

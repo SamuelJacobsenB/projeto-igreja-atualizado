@@ -1,8 +1,8 @@
 import axios from "axios";
+import { config } from "@/config/config";
 
-//your api url
 const api = axios.create({
-  baseURL: "http://localhost:2024",
+  baseURL: config.API_URL,
 });
 
 export default api;
