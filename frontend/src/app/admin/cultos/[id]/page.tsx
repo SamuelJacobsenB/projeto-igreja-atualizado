@@ -60,19 +60,19 @@ const EditCulto: React.FC = () => {
             return;
           }
 
-          showMessage("Boletim editado com sucesso!", "success");
+          showMessage("Culto editado com sucesso!", "success");
           router.push("/admin/cultos");
         });
     }
   };
 
   return (
-    <div className="edit_boletim">
+    <div className="edit_culto">
       <FormPage.root>
         <FormPage.formImage />
         <FormPage.formArea
-          backUrl="/admin/boletins"
-          title="Edite este boletim:"
+          backUrl="/admin/cultos"
+          title="Edite este culto:"
           onSubmit={async (evt) => await handleEditCulto(evt)}
         >
           <Input

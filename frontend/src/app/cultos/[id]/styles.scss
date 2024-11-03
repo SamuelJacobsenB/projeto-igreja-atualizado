@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+
+.culto_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  div.culto {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+    width: 90vw;
+    max-width: 800px;
+
+    h1 {
+      font-size: $title-size;
+      margin: 10px;
+    }
+
+    h2 {
+      font-size: $subtitle-size;
+      margin: 10px;
+    }
+
+    .culto_video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      height: auto;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-indent: 20px;
+      text-align: justify;
+      font-size: $p-size;
+      line-height: 1.4;
+
+      p {
+        text-align: justify;
+      }
+    }
+
+    .about {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+
+      small {
+        font-size: $small-size;
+      }
+    }
+  }
+}

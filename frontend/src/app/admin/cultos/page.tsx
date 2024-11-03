@@ -66,23 +66,23 @@ const AdminCultos: React.FC = () => {
           onClick={() => router.push("/admin/cultos/create")}
           color="primary"
         >
-          Cadastrar novo boletim:
+          Cadastrar novo culto
         </Button>
 
-        <h1>Veja os boletins listados abaixo: </h1>
+        <h1>Veja os cultos listados abaixo: </h1>
 
         <hr />
 
         <Search
-          placeholder="Pesquise por boletins"
+          placeholder="Pesquise por cultos"
           fixedItens={cultos}
           setItens={setCultoList}
         />
 
-        <div className="boletim_list">
+        <div className="culto_list">
           {cultos.length > 0 &&
             cultoList.map((culto) => (
-              <Card.Boletim
+              <Card.Culto
                 title={culto.title}
                 created_at={culto.created_at}
                 key={culto.id}
@@ -92,7 +92,7 @@ const AdminCultos: React.FC = () => {
                   onEdit={() => router.push(`/admin/cultos/${culto.id}`)}
                   onDelete={async () => await handleDelete(culto.id)}
                 />
-              </Card.Boletim>
+              </Card.Culto>
             ))}
         </div>
         {cultos.length === 0 && <h2>Nenhum culto cadastrado.</h2>}

@@ -77,6 +77,29 @@ export const links = [
           },
         ],
       },
+      {
+        path: "cultos",
+        name: "Cultos",
+        icon: I.Book,
+        type: "submenu",
+        admin: true,
+        children: [
+          {
+            path: "",
+            name: "Modificar",
+            icon: I.Pencil,
+            type: "link",
+            admin: true,
+          },
+          {
+            path: "create",
+            name: "Criar novo",
+            icon: I.Add,
+            type: "link",
+            admin: true,
+          },
+        ],
+      },
     ],
   },
   {

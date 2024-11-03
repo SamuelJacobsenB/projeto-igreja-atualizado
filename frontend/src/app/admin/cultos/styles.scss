@@ -1,4 +1,4 @@
-.admin_boletins {
+.admin_cultos {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -12,14 +12,14 @@
     text-align: center;
   }
 
-  .boletim_list {
+  .culto_list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 90%;
 
-    .boletim_modify_card {
+    .culto_modify_card {
       display: flex;
       flex-wrap: wrap;
 

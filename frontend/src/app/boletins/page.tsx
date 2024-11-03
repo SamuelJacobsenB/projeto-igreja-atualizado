@@ -27,6 +27,7 @@ const Boletins: React.FC = () => {
     <DefaultLayout>
       <div className="boletins page">
         <h1>Veja todos os boletins listados abaixo:</h1>
+        <hr />
         <Search
           placeholder="Pesquise por boletins"
           fixedItens={boletins}
