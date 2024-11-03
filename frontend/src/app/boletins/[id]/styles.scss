@@ -1,12 +1,12 @@
 @import "../../../styles/variables.scss";
 
-.boletim_info {
+.boletim_informations {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
 
-  div.boletim {
+  div.boletim_content {
     max-width: 800px;
 
     h1 {

@@ -24,6 +24,7 @@ import {
   IoChevronForward,
   IoChevronBack,
   IoVideocam,
+  IoLocation,
 } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -54,6 +55,7 @@ const I = {
   ArrowRight: IoChevronForward,
   ArrowLeft: IoChevronBack,
   Video: IoVideocam,
+  Location: IoLocation,
 };
 
 export default I;

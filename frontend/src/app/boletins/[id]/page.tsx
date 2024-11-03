@@ -19,9 +19,9 @@ const BoletimInfo: React.FC = () => {
   }
   return (
     <DefaultLayout>
-      <div className="boletim_info page">
+      <div className="boletim_informations page">
         {boletim && (
-          <Container className="boletim">
+          <Container className="boletim_content">
             <Topic>Pastoral</Topic>
             <h1>{boletim.title}</h1>
             <hr />

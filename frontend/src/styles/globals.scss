@@ -13,7 +13,6 @@ body {
 
 .page {
   width: 100%;
-  max-width: 1200px;
   min-height: calc(100vh - 270px);
   margin: auto;
 }
@@ -21,5 +20,6 @@ body {
 hr {
   background-color: black;
   width: 94%;
+  max-width: 1000px;
   height: 2px;
 }

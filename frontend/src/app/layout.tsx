@@ -4,11 +4,13 @@ import "@/styles/globals.scss";
 import Providers from "@/contexts/provider";
 import Message from "@/components/shared/message/message";
 import Modal from "@/components/shared/modal/modal";
-import DefaultLayout from "@/components/layout/defaultLayout";
 
 export const metadata: Metadata = {
   title: "PIBSGP",
   description: "PIBSGP - Primeira igreja batista em São Gabriel da Palha",
+  icons: {
+    icon: "/favicon/favicon.ico",
+  },
 };
 
 export default function RootLayout({

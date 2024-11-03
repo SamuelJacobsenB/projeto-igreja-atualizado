@@ -8,7 +8,6 @@ import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import { Card } from "@/components/layout/card/card";
 import Carousel from "@/components/shared/carousel/carousel";
-import Social from "@/components/layout/social/social";
 import "./styles.scss";
 
 const WarningsPage: React.FC = () => {
@@ -40,8 +39,6 @@ const WarningsPage: React.FC = () => {
               />
             ))}
         </div>
-
-        <Social />
       </div>
     </DefaultLayout>
   );
