@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useBoletins } from "@/hooks/useBoletins";
 import { useFiles } from "@/hooks/useFiles";
 import { getFilesByType } from "@/functions/getFilesByType";
@@ -13,6 +14,7 @@ import I from "@/components/icons/icons";
 import "./styles.scss";
 
 const Home: React.FC = () => {
+  const router = useRouter();
   const { boletins, loading, error } = useBoletins();
   const { files, loadingFiles, fileError } = useFiles();
 
@@ -60,6 +62,20 @@ const Home: React.FC = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.75065674101603!2d-40.536133163032666!3d-19.019258632509434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb6646905abd9af%3A0xe8f5aacdab87b83d!2sR.%20Argeu%20Rezende%2C%20239%20-%20Ap.%20202%20-%20Para%C3%ADso%2C%20S%C3%A3o%20Gabriel%20da%20Palha%20-%20ES%2C%2029780-000!5e0!3m2!1spt-BR!2sbr!4v1730644228773!5m2!1spt-BR!2sbr"
               loading="lazy"
             ></iframe>
+          </div>
+        </div>
+
+        <div className="home_contribua">
+          <div className="home_content_contribua">
+            <div>
+              <I.BonFire />
+              <h2>Colabore doando com dízimo e ofertas</h2>
+            </div>
+            <article>
+              <button onClick={() => router.push("/contribua")}>
+                Contribua
+              </button>
+            </article>
           </div>
         </div>
       </div>
