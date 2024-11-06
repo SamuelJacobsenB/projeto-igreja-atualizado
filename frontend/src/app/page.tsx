@@ -66,16 +66,39 @@ const Home: React.FC = () => {
         </div>
 
         <div className="home_contribua">
-          <div className="home_content_contribua">
+          <div>
+            <I.BonFire />
+            <h2>Colabore doando com dízimo e ofertas</h2>
+          </div>
+          <article>
+            <button onClick={() => router.push("/contribua")}>Contribua</button>
+          </article>
+        </div>
+
+        <div className="weekly_activities">
+          <div>
+            <h1>Atividades Semanais</h1>
             <div>
-              <I.BonFire />
-              <h2>Colabore doando com dízimo e ofertas</h2>
+              <b>Domingo</b>
+              <p>
+                Escola Bíblica: 08h30 <br /> Mensageiras e <br /> Embaixadores
+                do Rei: 17h30 <br /> Culto: 19h
+              </p>
             </div>
-            <article>
-              <button onClick={() => router.push("/contribua")}>
-                Contribua
-              </button>
-            </article>
+            <div>
+              <b>Segunda-feira</b>
+              <p>Mulheres que oram: 18h</p>
+            </div>
+            <div>
+              <b>Quinta-feira</b>
+              <p>
+                Culto: 19h30 <br /> Ensaio do Coro Jovem após o culto
+              </p>
+            </div>
+            <div>
+              <b>Sexta-feira</b>
+              <p>Ensaio do Ministério de Louvor: 19h</p>
+            </div>
           </div>
         </div>
       </div>
