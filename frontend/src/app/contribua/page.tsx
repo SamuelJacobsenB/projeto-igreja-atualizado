@@ -1,8 +1,7 @@
 import React from "react";
 import DefaultLayout from "@/components/layout/defaultLayout";
-import Container from "@/components/shared/container/container";
-import "./styles.scss";
 import Img from "@/components/shared/img/img";
+import "./styles.scss";
 
 const Contribua: React.FC = () => {
   return (
@@ -11,7 +10,7 @@ const Contribua: React.FC = () => {
         <h1>Contribua com um dos meios abaixo:</h1>
         <hr />
 
-        <Container className="contribua_box">
+        <div className="contribua_box">
           <div>
             <Img
               src="/imgs/contribua/banco-do-brasil.png"
@@ -48,7 +47,7 @@ const Contribua: React.FC = () => {
               Ag.: 3007 <br /> C/C: 339463-8
             </p>
           </div>
-        </Container>
+        </div>
       </div>
     </DefaultLayout>
   );

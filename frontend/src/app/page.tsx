@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useBoletins } from "@/hooks/useBoletins";
 import { useFiles } from "@/hooks/useFiles";
 import { getFilesByType } from "@/functions/getFilesByType";
-import { getBoletimSemanal } from "@/functions/getBoletimSemanal";
 import DefaultLayout from "@/components/layout/defaultLayout";
 import LoadPage from "@/components/layout/loadPage/loadPage";
 import "./styles.scss";
@@ -23,7 +22,7 @@ const Home: React.FC = () => {
   }
 
   const { defaultFiles } = getFilesByType(files);
-  const boletimSemanal = getBoletimSemanal(boletins);
+  const boletimSemanal = boletins[0];
 
   return (
     <DefaultLayout>
@@ -33,14 +32,19 @@ const Home: React.FC = () => {
         {boletimSemanal ? (
           <div className="boletim">
             <div className="boletim_info">
-              <h1 className="boletim_topic">PASTORAL</h1>
-              <h1>{boletimSemanal.title}</h1>
-              <hr />
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
-              />
-              <small>{boletimSemanal.author}</small>
+              <div className="boletim_topic">
+                <I.Book />
+                <h1>PASTORAL</h1>
+              </div>
+              <div className="boletim_content">
+                <h1>{boletimSemanal.title}</h1>
+                <hr />
+                <div
+                  className="content"
+                  dangerouslySetInnerHTML={{ __html: boletimSemanal.content }}
+                />
+                <small>{boletimSemanal.author}</small>
+              </div>
             </div>
           </div>
         ) : (

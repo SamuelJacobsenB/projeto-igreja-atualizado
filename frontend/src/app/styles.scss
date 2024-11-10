@@ -28,38 +28,53 @@
 
     .boletim_info {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
       max-width: 900px;
       padding: 10px;
 
       h1 {
         font-size: $title-size;
         margin: 10px;
+      }
 
-        &.boletim_topic {
-          text-align: left;
-          color: white;
-          font-size: calc($title-size + 10px);
+      .boletim_topic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-size: $title-size;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .boletim_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          text-indent: 20px;
+          text-align: justify;
+          font-size: $p-size;
+          line-height: 1.4;
           width: 100%;
         }
-      }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        text-indent: 20px;
-        text-align: justify;
-        font-size: $p-size;
-        line-height: 1.4;
-      }
-
-      small {
-        text-align: left;
-        color: white;
-        font-size: $small-size;
-        width: 100%;
+        small {
+          font-size: $small-size;
+          text-decoration: underline;
+        }
       }
     }
   }

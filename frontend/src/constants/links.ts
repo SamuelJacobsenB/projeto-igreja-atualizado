@@ -144,12 +144,6 @@ export const links = [
         type: "link",
       },
       {
-        path: "contato",
-        name: "Contato",
-        icon: I.Phone,
-        type: "link",
-      },
-      {
         path: "login",
         name: "Entrar",
         icon: I.Login,
